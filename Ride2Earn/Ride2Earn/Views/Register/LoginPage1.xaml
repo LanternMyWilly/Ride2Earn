@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ride2Earn"
+             x:Class="Ride2Earn.Views.Register.LoginPage1"
+             BackgroundImage="Background.jpg">
+    <ContentPage.Content>
+        <StackLayout x:Name="MasterLayout">
+
+            <StackLayout x:Name="LogoStack" VerticalOptions="Center">
+                <Image x:Name="LoginIcon" Source="Logo2.png" Margin="0,5,0,0"/>
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>60,0,60,0</OnIdiom.Phone>
+                        <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                <local:CurvedCornersLabel x:Name="lblName" Text="Ride2Earn" FontSize="20" FontFamily="Arial black" HorizontalTextAlignment="Center" TextColor="White" CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"></local:CurvedCornersLabel>
+            </StackLayout>
+
+            <StackLayout x:Name="LoginEntriesStack" VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>40,20,40,0</OnIdiom.Phone>
+                        <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
+
+                <local:CurvedCornersEntry
+                    x:Name="Entry_Voornaam"
+                    Placeholder="Voornaam"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+                <local:CurvedCornersEntry
+                    x:Name="Entry_Familienaam"
+                    Placeholder="Familienaam"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+                <local:CurvedCornersEntry
+                    x:Name="Entry_Email"
+                    Placeholder="Email"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+                <local:CurvedCornersEntry
+                    x:Name="Entry_Password"
+                    Placeholder="Wachtwoord"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+
+            </StackLayout>
+            <StackLayout x:Name="Button">
+                <Button
+                    x:Name="btnNext"
+                    Clicked="NextProcedure"
+                    Text="Volgende"
+                    Margin="0,30,0,0">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ride2Earn.Views.Register;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Ride2Earn
         {
             InitializeComponent();
 
-            MainPage = new Ride2Earn.MainPage();
+            MainPage = new LoginPage1();
         }
 
         protected override void OnStart()
