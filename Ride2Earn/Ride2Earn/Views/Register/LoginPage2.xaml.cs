@@ -39,7 +39,7 @@ namespace Ride2Earn.Views.Register
         {
             if (Device.OS == TargetPlatform.Android)
             {
-                Application.Current.MainPage = new NavigationPage(new Dashboard());
+                Application.Current.MainPage = new NavigationPage(new MasterDetail());
             }
 
 

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Ride2Earn.Views.Menu.Detailviews
+namespace Ride2Earn.Views.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Infoscreen1 : ContentPage
+    public partial class Pagina1 : ContentPage
     {
-        public Infoscreen1()
+        public Pagina1()
         {
             InitializeComponent();
         }
