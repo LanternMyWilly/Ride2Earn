@@ -32,17 +32,23 @@ namespace Ride2Earn.Views.Register
             Entry_Voornaam.FontSize = 15.5;
             Entry_Familienaam.FontSize = 15.5;
 
-            //Entry.FontSize = 15.5;
             //Entry_Username.Completed += (s, e) => Entry_Password.Focus();
             //Entry_Password.Completed += (s, e) => NextProcedure(s, e);
         }
 
-        async void NextProcedure(object sender, EventArgs e)
+        void NextProcedure(object sender, EventArgs e)
         {
-            if (Device.OS == TargetPlatform.Android)
-            {
+            //if (Device.OS == TargetPlatform.Android)
+            //{
                 Application.Current.MainPage = new NavigationPage(new LoginPage2());
-            }
+            //}
         }
+
+        /*public LoginPage1(string pVnaam, string pAnaam, string pEmail, string pWW)
+        {
+            pVnaam = Entry_Voornaam.ToString();
+            pAnaam = Entry_Familienaam.ToString();
+            pEmail = Entry_Password.ToString();
+        }*/
     }
 }

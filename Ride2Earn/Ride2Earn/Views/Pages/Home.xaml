@@ -4,13 +4,14 @@
              x:Class="Ride2Earn.Views.Pages.Home">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Logo2.png" Text="Item 1" Priority="0" />
-        <ToolbarItem Name="MenuItem2" Order="Primary" Icon="Logo2.png" Text="Item 2" Priority="1" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome home!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="Gegevens" Text="Gegevens tonen" Clicked="TonenEvent"/>
+            <Label x:Name="Straat" Text=""></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
