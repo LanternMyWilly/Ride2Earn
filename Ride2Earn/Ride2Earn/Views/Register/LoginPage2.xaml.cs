@@ -40,6 +40,7 @@ namespace Ride2Earn.Views.Register
             Gebruiker b = new Gebruiker(Convert.ToString(Entry_Straat.Text), Convert.ToString(Entry_Gemeente.Text), Convert.ToString(Entry_rknNummer.Text), Convert.ToInt16(Entry_Nummer.Text), Convert.ToInt16(Entry_Pcode.Text));
             Application.Current.MainPage = new NavigationPage(new MasterDetail());
             App.a.SaveUser(b);
+            //test123
         }
     }
 }
