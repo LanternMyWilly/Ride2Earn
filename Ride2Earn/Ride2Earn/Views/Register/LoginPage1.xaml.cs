@@ -38,10 +38,8 @@ namespace Ride2Earn.Views.Register
 
         void NextProcedure(object sender, EventArgs e)
         {
-            //if (Device.OS == TargetPlatform.Android)
-            //{
-                Application.Current.MainPage = new NavigationPage(new LoginPage2());
-            //}
+            Application.Current.MainPage = new NavigationPage(new LoginPage2(Entry_Voornaam.Text.ToString(), Entry_Familienaam.Text.ToString(), Entry_Email.Text.ToString(), Entry_Password.Text.ToString()));
+            
         }
 
         /*public LoginPage1(string pVnaam, string pAnaam, string pEmail, string pWW)

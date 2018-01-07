@@ -16,5 +16,8 @@ namespace Ride2Earn.Models
 
 
         public static int LoginIconHeight = 70;
+
+        //Login
+        public static string LoginUrl = "https://test.com/api/Auth/Login";
     }
 }

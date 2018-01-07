@@ -13,6 +13,7 @@ namespace Ride2Earn
     {
         static UserDatabase Users;
         static TokenDatabase Tokens;
+        static RestService restService;
         public App()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace Ride2Earn
                 return Users;
             }
         }
+
         public static TokenDatabase b
         {
             get
@@ -55,6 +57,18 @@ namespace Ride2Earn
                     Tokens = new TokenDatabase();
                 }
                 return Tokens;
+            }
+        }
+
+        public static RestService c
+        {
+            get
+            {
+                if (restService == null)
+                {
+                    restService = new RestService();
+                }
+                return restService;
             }
         }
     }

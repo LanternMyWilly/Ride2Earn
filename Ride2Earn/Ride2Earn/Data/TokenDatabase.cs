@@ -22,7 +22,7 @@ namespace Ride2Earn.Data
 
         }
 
-        public Token getUser()
+        public Token GetToken()
         {
             lock (locker)
             {

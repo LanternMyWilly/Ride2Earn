@@ -90,6 +90,14 @@ namespace Ride2Earn.Models
             intPostcode = pPcode;
         }
 
+        public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw)
+        {
+            strVoornaam = pVnaam;
+            strAchternaam = pAnaam;
+            strEmail = pEmail;
+            strWachtwoord = pWw;
+        }
+
         public Gebruiker(string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
         {
             strStraat = pStraat;

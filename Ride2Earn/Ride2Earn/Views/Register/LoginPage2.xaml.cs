@@ -15,8 +15,16 @@ namespace Ride2Earn.Views.Register
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage2 : ContentPage
     {
-        public LoginPage2()
+        private string Voornaam;
+        private string Achternaam;
+        private string Email;
+        private string Wachtwoord;
+        public LoginPage2(string pVoornaam, string pAchternaam, string pEmail, string pWachtwoord)
         {
+            Voornaam = pVoornaam;
+            Achternaam = pAchternaam;
+            Email = pEmail;
+            Wachtwoord = pWachtwoord;
             InitializeComponent();
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -35,11 +43,16 @@ namespace Ride2Earn.Views.Register
             Entry_Straat.FontSize = 15.5;
         }
 
-        void RegisterEvent(object sender, EventArgs e)
+        async void RegisterEvent(object sender, EventArgs e)
         {
-            Gebruiker b = new Gebruiker(Convert.ToString(Entry_Straat.Text), Convert.ToString(Entry_Gemeente.Text), Convert.ToString(Entry_rknNummer.Text), Convert.ToInt16(Entry_Nummer.Text), Convert.ToInt16(Entry_Pcode.Text));
+            Gebruiker b = new Gebruiker(Voornaam, Achternaam, Email, Wachtwoord, Entry_Straat.Text.ToString(), Entry_Gemeente.Text.ToString(), Entry_rknNummer.Text.ToString(), Convert.ToInt16(Entry_Nummer.Text), Convert.ToInt16(Entry_Pcode.Text));          
+            var result = await App.c.Login(b);
+            if (result.access_token != null)
+            {
+                App.a.SaveUser(b);
+            }
             Application.Current.MainPage = new NavigationPage(new MasterDetail());
-            App.a.SaveUser(b);
+            
         }
     }
 }
