@@ -32,6 +32,7 @@ namespace Ride2Earn.Views.Register
 
         void Init()
         {
+            //sterf
             btnRegister.BackgroundColor = Constants.BackgroundTextColor;
             btnRegister.TextColor = Constants.MainTextColor;
             ActivitySpinner.IsVisible = false;
