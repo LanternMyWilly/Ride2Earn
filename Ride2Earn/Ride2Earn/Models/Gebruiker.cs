@@ -16,9 +16,12 @@ namespace Ride2Earn.Models
         private string strStraat;
         private string strGemeente;
         private string strRknNummer;
+        private string strStart;
+        private string strEinde;
+        private double dblAfstand;
         private int intNummer;
         private int intPostcode;
-        private int intID;
+        private int intID;       
 
         [PrimaryKey, AutoIncrement]
         public int ID
@@ -98,6 +101,14 @@ namespace Ride2Earn.Models
         public override string ToString()
         {
             return $"({ID}) {strVoornaam}, {strAchternaam}";
+        }
+        
+
+        public Gebruiker(string pStart, string pEinde, double pAfst)
+        {
+            strStart = pStart;
+            strEinde = pEinde;
+            dblAfstand = pAfst;
         }
     }
 }
