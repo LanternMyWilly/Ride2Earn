@@ -32,7 +32,6 @@ namespace Ride2Earn.Views.Register
 
         void Init()
         {
-            //sterf
             btnRegister.BackgroundColor = Constants.BackgroundTextColor;
             btnRegister.TextColor = Constants.MainTextColor;
             ActivitySpinner.IsVisible = false;
@@ -42,6 +41,7 @@ namespace Ride2Earn.Views.Register
             Entry_Nummer.FontSize = 15.5;
             Entry_Pcode.FontSize = 15.5;
             Entry_Straat.FontSize = 15.5;
+            Entry_rknNummer.FontSize = 15.5;
         }
 
         async void RegisterEvent(object sender, EventArgs e)
