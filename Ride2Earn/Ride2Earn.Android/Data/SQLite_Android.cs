@@ -24,7 +24,7 @@ namespace Ride2Earn.Droid.Data
 
         public SQLite.SQLiteConnection GetConnection()
         {
-            var sqliteFileName = "TestDB.db3";
+            var sqliteFileName = "DitIsEenDB.db3";
             string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteFileName);
             var conn = new SQLite.SQLiteConnection(path);

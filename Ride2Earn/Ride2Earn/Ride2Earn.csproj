@@ -41,7 +41,6 @@
     <Compile Include="CurvedCornersButton.cs" />
     <Compile Include="CurvedCornersEntry.cs" />
     <Compile Include="CurvedCornersLabel.cs" />
-    <Compile Include="Data\ISQLite.cs" />
     <Compile Include="Data\RestService.cs" />
     <Compile Include="Data\TokenDatabase.cs" />
     <Compile Include="Data\UserDatabase.cs" />
@@ -50,6 +49,8 @@
     </Compile>
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\Gebruiker.cs" />
+    <Compile Include="Data\IGebruikersRepository.cs" />
+    <Compile Include="Models\GebruikersViewModel.cs" />
     <Compile Include="Models\MasterMenuItem.cs" />
     <Compile Include="Models\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

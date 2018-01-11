@@ -1,4 +1,5 @@
 ﻿using Ride2Earn.Data;
+using Ride2Earn.Models;
 using Ride2Earn.Views.Register;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace Ride2Earn
         static UserDatabase Users;
         static TokenDatabase Tokens;
         static RestService restService;
-        public App()
+
+        public App(IGebruikersRepository a)
         {
             InitializeComponent();
 

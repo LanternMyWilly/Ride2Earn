@@ -20,7 +20,7 @@ namespace Ride2Earn.Models
         private int intPostcode;
         private int intID;
 
-        
+        [PrimaryKey, AutoIncrement]
         public int ID
         {
             get { return intID; }
@@ -62,7 +62,6 @@ namespace Ride2Earn.Models
             set { strRknNummer = value; }
         }
 
-        [PrimaryKey]
         public int Nummer
         {
             get { return intNummer; }
@@ -77,7 +76,7 @@ namespace Ride2Earn.Models
         public Gebruiker()
         { }
 
-        public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw, string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
+        /*public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw, string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
         {
             strVoornaam = pVnaam;
             strAchternaam = pAnaam;
@@ -88,28 +87,17 @@ namespace Ride2Earn.Models
             strRknNummer = pRknnummer;
             intNummer = pNmr;
             intPostcode = pPcode;
-        }
+        }/*
 
-        public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw)
-        {
-            strVoornaam = pVnaam;
-            strAchternaam = pAnaam;
-            strEmail = pEmail;
-            strWachtwoord = pWw;
-        }
 
-        public Gebruiker(string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
-        {
-            strStraat = pStraat;
-            strGemeente = pGemeente;
-            strRknNummer = pRknnummer;
-            intNummer = pNmr;
-            intPostcode = pPcode;
-        }
+        /*public override string ToString()
+         {
+             return string.Format("[Gebruiker: ID={0}, strVoornaam={1}, strAchternaam={2}, strEmail{3}, strWachtwoord{4}]", ID, strVoornaam, strAchternaam, strEmail, strWachtwoord);
+         }*/
 
         public override string ToString()
         {
-            return strStraat;
+            return $"({ID}) {strVoornaam}, {strAchternaam}";
         }
     }
 }
