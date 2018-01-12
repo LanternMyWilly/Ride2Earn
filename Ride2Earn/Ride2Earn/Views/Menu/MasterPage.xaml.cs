@@ -27,9 +27,8 @@ namespace Ride2Earn.Views.Menu
         {
             items = new List<MasterMenuItem>();
             items.Add(new MasterMenuItem("Home", "Logo2.png", Color.White, typeof(Home)));
-            items.Add(new MasterMenuItem("Pagina1", "Logo2.png", Color.White, typeof(Pagina1)));
+            items.Add(new MasterMenuItem("Mijn gegevens", "Logo2.png", Color.White, typeof(Pagina1)));
             ListView.ItemsSource = items;
-
         }
     }
 }
