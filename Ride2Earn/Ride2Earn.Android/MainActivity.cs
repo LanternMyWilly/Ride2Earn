@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using SQLite;
+using System.IO;
 
 namespace Ride2Earn.Droid
 {
@@ -20,12 +22,14 @@ namespace Ride2Earn.Droid
              
             base.OnCreate(bundle);
 
+            var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "LocalRide2Earn.db");
+            var RittenRepository = new RitRepository(dbPath);
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new App(RittenRepository));
 
             var mainPage = new MainPage();//this could be content page
             var rootPage = new NavigationPage(mainPage);
-
         }
     }
 }

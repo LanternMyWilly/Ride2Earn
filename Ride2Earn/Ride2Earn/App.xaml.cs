@@ -1,24 +1,49 @@
-﻿using Ride2Earn.Data;
-using Ride2Earn.Views.Register;
+﻿using Ride2Earn.Views.Register;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using Ride2Earn.Data;
+using Ride2Earn.Helpers;
+using Ride2Earn.Views.Menu;
+using Ride2Earn.Models;
 
 namespace Ride2Earn
 {
     public partial class App : Application
     {
-        static UserDatabase Users;
-        static TokenDatabase Tokens;
-        static RestService restService;
-        public App()
+        public string IsFirstTime
+        {
+            get { return Settings.GeneralSettings; }
+            set
+            {
+                if (Settings.GeneralSettings == value)
+                    return;
+                Settings.GeneralSettings = value;
+            }
+        }
+
+        public App(IRitRepository a)
         {
             InitializeComponent();
 
-            MainPage = new LoginPage1();
+            if (IsFirstTime == "yes")
+            {
+
+                MainPage = new LoginPage1();
+                IsFirstTime = "no";
+            }
+            else
+            {
+                MainPage = new MasterDetail()
+                {
+                    BindingContext = new RitViewModel(a),
+
+                };
+            }
+
         }
 
         protected override void OnStart()
@@ -36,40 +61,6 @@ namespace Ride2Earn
             // Handle when your app resumes
         }
 
-        public static UserDatabase a
-        {
-            get
-            {
-                if (Users == null)
-                {
-                    Users = new UserDatabase();
-                }
-                return Users;
-            }
-        }
-
-        public static TokenDatabase b
-        {
-            get
-            {
-                if (Tokens == null)
-                {
-                    Tokens = new TokenDatabase();
-                }
-                return Tokens;
-            }
-        }
-
-        public static RestService c
-        {
-            get
-            {
-                if (restService == null)
-                {
-                    restService = new RestService();
-                }
-                return restService;
-            }
-        }
+        
     }
 }

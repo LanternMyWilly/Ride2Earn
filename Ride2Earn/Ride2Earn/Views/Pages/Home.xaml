@@ -1,17 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ride2Earn.Views.Pages.Home">
+             xmlns:local="clr-namespace:Ride2Earn"
+             x:Class="Ride2Earn.Views.Pages.Home"
+             BackgroundColor="#637775">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Logo2.png" Text="Item 1" Priority="0" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome home!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="Gegevens" Text="Gegevens tonen" Clicked="TonenEvent"/>
-            <Label x:Name="Straat" Text=""></Label>
+        <StackLayout x:Name="MasterLayout">
+            <local:CurvedCornersLabel 
+                x:Name="lblAfstand"
+                Text="{Binding RitAfstand}"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Margin="0,30,0,0">
+            </local:CurvedCornersLabel>
+
+            <StackLayout x:Name="EntriesStack" VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>40,10,40,0</OnIdiom.Phone>
+                        <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+
+                <local:CurvedCornersEntry
+                    Text="{Binding RitStart}"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+
+                <local:CurvedCornersEntry
+                    Text="{Binding RitEinde}"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+
+                <local:CurvedCornersEntry
+                    Text="{Binding RitGereden}"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+
+            </StackLayout>
+
+            <StackLayout x:Name="Button">
+                <Button 
+                    x:Name="btnBevestigen" 
+                    Text="Bevestig"
+                    Margin="0,25,0,0"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

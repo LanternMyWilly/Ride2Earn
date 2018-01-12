@@ -38,15 +38,8 @@ namespace Ride2Earn.Views.Register
 
         void NextProcedure(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new LoginPage2(Entry_Voornaam.Text.ToString(), Entry_Familienaam.Text.ToString(), Entry_Email.Text.ToString(), Entry_Password.Text.ToString()));
+            Application.Current.MainPage = new NavigationPage(new LoginPage2());
             
         }
-
-        /*public LoginPage1(string pVnaam, string pAnaam, string pEmail, string pWW)
-        {
-            pVnaam = Entry_Voornaam.ToString();
-            pAnaam = Entry_Familienaam.ToString();
-            pEmail = Entry_Password.ToString();
-        }*/
     }
 }

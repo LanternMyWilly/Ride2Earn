@@ -1,5 +1,4 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,7 +61,6 @@ namespace Ride2Earn.Models
             set { strRknNummer = value; }
         }
 
-        [PrimaryKey]
         public int Nummer
         {
             get { return intNummer; }
@@ -77,35 +75,6 @@ namespace Ride2Earn.Models
         public Gebruiker()
         { }
 
-        public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw, string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
-        {
-            strVoornaam = pVnaam;
-            strAchternaam = pAnaam;
-            strEmail = pEmail;
-            strWachtwoord = pWw;
-            strStraat = pStraat;
-            strGemeente = pGemeente;
-            strRknNummer = pRknnummer;
-            intNummer = pNmr;
-            intPostcode = pPcode;
-        }
-
-        public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw)
-        {
-            strVoornaam = pVnaam;
-            strAchternaam = pAnaam;
-            strEmail = pEmail;
-            strWachtwoord = pWw;
-        }
-
-        public Gebruiker(string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
-        {
-            strStraat = pStraat;
-            strGemeente = pGemeente;
-            strRknNummer = pRknnummer;
-            intNummer = pNmr;
-            intPostcode = pPcode;
-        }
 
         public override string ToString()
         {

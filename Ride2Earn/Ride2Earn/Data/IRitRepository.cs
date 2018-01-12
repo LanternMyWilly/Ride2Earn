@@ -1,14 +1,14 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ride2Earn.Klassen;
 
 namespace Ride2Earn.Data
 {
-    public interface ISQLite
+    public interface IRitRepository
     {
-        SQLiteConnection GetConnection();
+        Task<bool> AddRit(Rit a);
     }
 }
