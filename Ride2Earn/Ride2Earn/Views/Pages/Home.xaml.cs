@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Ride2Earn.Data;
 using Ride2Earn.Models;
 using Ride2Earn.Views.Pages;
 using Ride2Earn.Views.Menu;
@@ -36,7 +35,7 @@ namespace Ride2Earn.Views.Pages
             Entry_Afstand.FontSize = 15.5;
         }
 
-        async void Invullen(object sender, EventArgs e)
+        void Invullen(object sender, EventArgs e)
         {
             Gebruiker a = new Gebruiker(Entry_Start.Text, Entry_Einde.Text, Convert.ToDouble(Entry_Afstand.Text));
         }

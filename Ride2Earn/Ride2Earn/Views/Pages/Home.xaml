@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ride2Earn"
              x:Class="Ride2Earn.Views.Pages.Home"
-             BackgroundImage="Background.jpg">
+             BackgroundColor="#637775">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Logo2.png" Text="Item 1" Priority="0" />
     </ContentPage.ToolbarItems>
@@ -11,7 +11,7 @@
         <StackLayout x:Name="MasterLayout">
             <local:CurvedCornersLabel 
                 x:Name="lblAfstand"
-                Text="Gereden afstand"
+                Text="{Binding RitAfstand}"
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                 Margin="0,30,0,0">
@@ -26,7 +26,7 @@
                 </StackLayout.Padding>
 
                 <local:CurvedCornersEntry
-                    x:Name="Entry_Start"
+                    Text="{Binding RitStart}"
                     Placeholder="Beginuur"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"
@@ -34,7 +34,7 @@
                 </local:CurvedCornersEntry>
 
                 <local:CurvedCornersEntry
-                    x:Name="Entry_Einde"
+                    Text="{Binding RitEinde}"
                     Placeholder="Einduur"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"
@@ -42,7 +42,7 @@
                 </local:CurvedCornersEntry>
 
                 <local:CurvedCornersEntry
-                    x:Name="Entry_Afstand"
+                    Text="{Binding RitGereden}"
                     Placeholder="Gereden kilometers"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"

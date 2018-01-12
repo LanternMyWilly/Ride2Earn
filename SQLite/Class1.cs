@@ -6,7 +6,9 @@ namespace SQLite
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<Gebruiker> Gebruikers { get; set; }
+        //public DbSet<Gebruiker> Gebruikers { get; set; }
+        public DbSet<Rit> Ritten { get; set; }
+
         private readonly string _databasePath;
         public DatabaseContext(string databasePath)
         {

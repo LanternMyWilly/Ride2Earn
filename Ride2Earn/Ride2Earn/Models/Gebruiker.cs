@@ -79,28 +79,9 @@ namespace Ride2Earn.Models
         public Gebruiker()
         { }
 
-        /*public Gebruiker(string pVnaam, string pAnaam, string pEmail, string pWw, string pStraat, string pGemeente, string pRknnummer, int pNmr, int pPcode)
-        {
-            strVoornaam = pVnaam;
-            strAchternaam = pAnaam;
-            strEmail = pEmail;
-            strWachtwoord = pWw;
-            strStraat = pStraat;
-            strGemeente = pGemeente;
-            strRknNummer = pRknnummer;
-            intNummer = pNmr;
-            intPostcode = pPcode;
-        }/*
-
-
-        /*public override string ToString()
-         {
-             return string.Format("[Gebruiker: ID={0}, strVoornaam={1}, strAchternaam={2}, strEmail{3}, strWachtwoord{4}]", ID, strVoornaam, strAchternaam, strEmail, strWachtwoord);
-         }*/
-
         public override string ToString()
         {
-            return $"({ID}) {strVoornaam}, {strAchternaam}";
+            return $"{strVoornaam}, {strAchternaam}";
         }
         
 

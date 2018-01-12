@@ -1,5 +1,8 @@
 ﻿using Ride2Earn.Data;
+using Ride2Earn.Helpers;
 using Ride2Earn.Models;
+using Ride2Earn.Views.Menu;
+using Ride2Earn.Views.Pages;
 using Ride2Earn.Views.Register;
 using System;
 using System.Collections.Generic;
@@ -12,15 +15,36 @@ namespace Ride2Earn
 {
     public partial class App : Application
     {
-        static UserDatabase Users;
-        static TokenDatabase Tokens;
-        static RestService restService;
+        public string IsFirstTime
+        {
+            get { return Settings.GeneralSettings; }
+            set
+            {
+                if (Settings.GeneralSettings == value)
+                    return;
+                Settings.GeneralSettings = value;
+            }
+        }
 
-        public App(IGebruikersRepository a)
+        public App(IRitRepository a)
         {
             InitializeComponent();
 
-            MainPage = new LoginPage1();
+            if (IsFirstTime == "yes")
+            {
+                
+                MainPage = new LoginPage1();
+                IsFirstTime = "no";
+            }
+            else
+            {
+                MainPage = new MasterDetail()
+                {
+                    BindingContext = new RitViewModel(a),
+                    
+                };
+            }
+
         }
 
         protected override void OnStart()
@@ -36,42 +60,6 @@ namespace Ride2Earn
         protected override void OnResume()
         {
             // Handle when your app resumes
-        }
-
-        public static UserDatabase a
-        {
-            get
-            {
-                if (Users == null)
-                {
-                    Users = new UserDatabase();
-                }
-                return Users;
-            }
-        }
-
-        public static TokenDatabase b
-        {
-            get
-            {
-                if (Tokens == null)
-                {
-                    Tokens = new TokenDatabase();
-                }
-                return Tokens;
-            }
-        }
-
-        public static RestService c
-        {
-            get
-            {
-                if (restService == null)
-                {
-                    restService = new RestService();
-                }
-                return restService;
-            }
-        }
+        }        
     }
 }

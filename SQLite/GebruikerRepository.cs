@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using Ride2Earn.Models;
 using System;
 using System.Collections.Generic;
@@ -102,4 +102,4 @@ namespace SQLite
             }
         }
     }
-}
+}*/
