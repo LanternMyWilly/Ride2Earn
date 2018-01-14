@@ -41,7 +41,8 @@
     <Compile Include="CurvedCornersButton.cs" />
     <Compile Include="CurvedCornersEntry.cs" />
     <Compile Include="CurvedCornersLabel.cs" />
-    <Compile Include="Data\IRitRepository.cs" />
+    <Compile Include="Data\Ride2EarnDatabase.cs" />
+    <Compile Include="Helpers\IFileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Klassen\Rit.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -50,7 +51,6 @@
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Klassen\Gebruiker.cs" />
     <Compile Include="Models\MasterMenuItem.cs" />
-    <Compile Include="Models\RitViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Menu\MasterDetail.xaml.cs">
       <DependentUpon>MasterDetail.xaml</DependentUpon>
@@ -91,11 +91,8 @@
     <Reference Include="Plugin.Settings.Abstractions, Version=3.2.0.130, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Settings.3.2.0.130-beta\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLite.Net-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.9\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    <Reference Include="SQLite-net, Version=1.5.166.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\sqlite-net-pcl.1.5.166-beta\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>

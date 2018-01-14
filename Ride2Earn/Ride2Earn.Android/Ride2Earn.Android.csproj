@@ -201,6 +201,7 @@
     <Compile Include="CustomRenderer\FirstButtonRenderer.cs" />
     <Compile Include="CustomRenderer\FirstEntryRenderer.cs" />
     <Compile Include="CustomRenderer\FirstLabelRenderer.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -226,10 +227,6 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SQLite\SQLite.csproj">
-      <Project>{63a30309-8ec1-49db-9848-a5c9f4da00f8}</Project>
-      <Name>SQLite</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ride2Earn\Ride2Earn.csproj">
       <Project>{16f26630-37f6-4567-98d5-9ed10df1437e}</Project>
       <Name>Ride2Earn</Name>

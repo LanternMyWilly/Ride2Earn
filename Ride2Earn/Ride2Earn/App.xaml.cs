@@ -9,11 +9,14 @@ using Ride2Earn.Data;
 using Ride2Earn.Helpers;
 using Ride2Earn.Views.Menu;
 using Ride2Earn.Models;
+using Ride2Earn.Views.Pages;
 
 namespace Ride2Earn
 {
     public partial class App : Application
     {
+        static Ride2EarnDatabase database;
+
         public string IsFirstTime
         {
             get { return Settings.GeneralSettings; }
@@ -25,7 +28,7 @@ namespace Ride2Earn
             }
         }
 
-        public App(IRitRepository a)
+        public App()
         {
             InitializeComponent();
 
@@ -37,13 +40,21 @@ namespace Ride2Earn
             }
             else
             {
-                MainPage = new MasterDetail()
-                {
-                    BindingContext = new RitViewModel(a),
-
-                };
+                MainPage = new MasterDetail();
             }
 
+        }
+
+        public static Ride2EarnDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new Ride2EarnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("Ride2EarnDatabase.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

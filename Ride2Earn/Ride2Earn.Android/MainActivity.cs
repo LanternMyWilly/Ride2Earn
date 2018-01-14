@@ -22,11 +22,8 @@ namespace Ride2Earn.Droid
              
             base.OnCreate(bundle);
 
-            var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "LocalRide2Earn.db");
-            var RittenRepository = new RitRepository(dbPath);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App(RittenRepository));
+            LoadApplication(new App());
 
             var mainPage = new MainPage();//this could be content page
             var rootPage = new NavigationPage(mainPage);
