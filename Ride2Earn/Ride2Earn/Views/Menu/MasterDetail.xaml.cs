@@ -13,7 +13,6 @@ namespace Ride2Earn.Views.Menu
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetail : MasterDetailPage
     {
-        private string Voornaam;
         public MasterDetail()
         {
             InitializeComponent();

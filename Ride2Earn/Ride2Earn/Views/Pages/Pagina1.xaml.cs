@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ride2Earn.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,9 @@ namespace Ride2Earn.Views.Pages
     {
         public Pagina1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
+
+        
     }
 }
