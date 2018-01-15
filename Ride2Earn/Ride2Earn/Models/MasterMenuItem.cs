@@ -10,16 +10,7 @@ namespace Ride2Earn.Models
     public class MasterMenuItem
     {
         public string Title { get; set; }
-        public string IconSource { get; set; }
-        public Color Backgroundcolor { get; set; }
+        public string Icon { get; set; }
         public Type TargetType { get; set; }
-
-        public MasterMenuItem(string Title, string IconSoure, Color ColorA, Type Target)
-        {
-            this.Title = Title;
-            this.IconSource = IconSource;
-            this.Backgroundcolor = ColorA;
-            this.TargetType = Target;
-        }
     }
 }
