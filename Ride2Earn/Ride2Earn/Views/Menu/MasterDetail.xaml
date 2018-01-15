@@ -47,7 +47,8 @@
                                     <Label Text="{Binding Title}"
                          FontSize="Small"
                          VerticalOptions="End"
-                         TextColor="Black"/>
+                         TextColor="Black"
+                                           />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

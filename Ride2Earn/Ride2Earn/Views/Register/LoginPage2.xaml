@@ -30,6 +30,7 @@
 
                 <local:CurvedCornersEntry
                     x:Name="Entry_Straat"
+                    Text="{Binding Straat}"
                     Placeholder="Straat"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"
@@ -37,27 +38,31 @@
                 </local:CurvedCornersEntry>
                 <local:CurvedCornersEntry
                     x:Name="Entry_Nummer"
+                    Text="{Binding Nummer}"
                     Placeholder="Nummer"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"
                     TextColor="White">
                 </local:CurvedCornersEntry>
                 <local:CurvedCornersEntry
-                    x:Name="Entry_Gemeente"
-                    Placeholder="Gemeente"
-                    CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
-                    TextColor="White">
-                </local:CurvedCornersEntry>
-                <local:CurvedCornersEntry
-                    x:Name="Entry_Pcode"
+                    x:Name="Entry_Postcode"
+                    Text="{Binding Postcode}"
                     Placeholder="Postcode"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"
                     TextColor="White">
                 </local:CurvedCornersEntry>
                 <local:CurvedCornersEntry
+                    x:Name="Entry_Gemeente"
+                    Text="{Binding Gemeente}"
+                    Placeholder="Gemeente"
+                    CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="15"
+                    TextColor="White">
+                </local:CurvedCornersEntry>
+                <local:CurvedCornersEntry
                     x:Name="Entry_rknNummer"
+                    Text="{Binding RknNummer}"
                     Placeholder="Rekeningnummer"
                     CurvedBackgroundColor="#92afac"
                     CurvedCornerRadius="15"

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ride2Earn.Klassen;
+using Ride2Earn.Models;
 using SQLite;
 
 namespace Ride2Earn.Data
@@ -30,6 +31,20 @@ namespace Ride2Earn.Data
                 return database.UpdateAsync(a);
             }
             else { return database.InsertAsync(a); }
+        }
+
+        public Task<int> SaveGebruikerAsync(Gebruiker a)
+        {
+            if (a.ID != 0)
+            {
+                return database.UpdateAsync(a);
+            }
+            else { return database.InsertAsync(a); }
+        }
+
+        public Task<List<Gebruiker>> GetGebruikerAsync()
+        {
+            return database.Table<Gebruiker>().ToListAsync();
         }
     }
 }

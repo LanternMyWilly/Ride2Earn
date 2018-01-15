@@ -9,23 +9,23 @@ using Xamarin.Forms.Xaml;
 using Ride2Earn.Models;
 using Ride2Earn.Views.Register;
 using Ride2Earn.Views.Menu;
+using Ride2Earn.Klassen;
 
 namespace Ride2Earn.Views.Register
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage2 : ContentPage
     {
-        
-        public LoginPage2()
+        public LoginPage2(Gebruiker a)
         {
             InitializeComponent();
+            BindingContext = a;
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
         void Init()
         {
-            //sterf
             btnRegister.BackgroundColor = Constants.BackgroundTextColor;
             btnRegister.TextColor = Constants.MainTextColor;
             ActivitySpinner.IsVisible = false;
@@ -33,13 +33,22 @@ namespace Ride2Earn.Views.Register
 
             Entry_Gemeente.FontSize = 15.5;
             Entry_Nummer.FontSize = 15.5;
-            Entry_Pcode.FontSize = 15.5;
+            Entry_Postcode.FontSize = 15.5;
             Entry_Straat.FontSize = 15.5;
+
+            Entry_Straat.Completed += (s, e) => Entry_Nummer.Focus();
+            Entry_Nummer.Completed += (s, e) => Entry_Postcode.Focus();
+            Entry_Postcode.Completed += (s, e) => Entry_Gemeente.Focus();
+            Entry_Gemeente.Completed += (s, e) => Entry_rknNummer.Focus();
+            Entry_rknNummer.Completed += (s, e) => RegisterEvent(s, e);
         }
 
-        void RegisterEvent(object sender, EventArgs e)
+        async void RegisterEvent(object sender, EventArgs e)
         {
-                Application.Current.MainPage = new NavigationPage(new MasterDetail());  
+            var gebruiker = (Gebruiker)BindingContext;
+            await App.Database.SaveGebruikerAsync(gebruiker);
+            await Navigation.PopAsync();
+            Application.Current.MainPage = new NavigationPage(new MasterDetail());  
         }
     }
 }
