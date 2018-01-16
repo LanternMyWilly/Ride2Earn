@@ -27,7 +27,6 @@ namespace Ride2Earn.Views.Register
             btnNext.BackgroundColor = Constants.BackgroundTextColor;
             btnNext.TextColor = Constants.MainTextColor;
             ActivitySpinner.IsVisible = false;
-            BindingContext = new Gebruiker();
             LoginIcon.HeightRequest = Constants.LoginIconHeight;
 
             Entry_Password.FontSize = 15.5;
@@ -43,8 +42,8 @@ namespace Ride2Earn.Views.Register
 
         void NextProcedure(object sender, EventArgs e)
         {
-            var gebruiker = (Gebruiker)BindingContext;
-            Application.Current.MainPage = new NavigationPage(new LoginPage2(gebruiker));
+            var a = (Gebruiker)BindingContext;
+            Application.Current.MainPage = new NavigationPage(new LoginPage2(a));
         }
     }
 }

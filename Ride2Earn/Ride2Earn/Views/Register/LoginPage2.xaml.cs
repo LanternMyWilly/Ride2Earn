@@ -16,10 +16,10 @@ namespace Ride2Earn.Views.Register
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage2 : ContentPage
     {
-        public LoginPage2(Gebruiker a)
+        public LoginPage2(Gebruiker b)
         {
             InitializeComponent();
-            BindingContext = a;
+            BindingContext = b;
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
         }

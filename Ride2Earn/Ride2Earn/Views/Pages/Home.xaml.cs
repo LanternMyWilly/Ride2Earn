@@ -30,7 +30,7 @@ namespace Ride2Earn.Views.Pages
         }
         async void RefreshEvent(object sender, EventArgs e)
         {
-            listView.ItemsSource = await App.Database.GetRitAsync();
+            listView.ItemsSource = await App.Database.GetGebruikerAsync();
         }
     }
 }

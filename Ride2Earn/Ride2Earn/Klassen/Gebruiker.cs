@@ -20,5 +20,10 @@ namespace Ride2Earn.Klassen
         public string RknNummer { get; set; }
         public int Nummer { get; set; }
         public int Postcode { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Voornaam}, {Achternaam}, {Straat}, {Postcode}";
+        }
     }
 }

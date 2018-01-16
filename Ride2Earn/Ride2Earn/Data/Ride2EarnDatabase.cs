@@ -17,6 +17,7 @@ namespace Ride2Earn.Data
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Rit>().Wait();
+            database.CreateTableAsync<Gebruiker>().Wait();
         }
 
         public Task<List<Rit>> GetRitAsync()
