@@ -17,7 +17,7 @@
                     </OnIdiom>
                 </StackLayout.Padding>
                 <local:CurvedCornersLabel x:Name="lblName" Text="Ride2Earn" FontSize="20" FontFamily="Arial black" HorizontalTextAlignment="Center" TextColor="White" CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"></local:CurvedCornersLabel>
+                    CurvedCornerRadius="18"></local:CurvedCornersLabel>
             </StackLayout>
 
             <StackLayout x:Name="LoginEntriesStack" VerticalOptions="CenterAndExpand">
@@ -30,38 +30,47 @@
 
                 <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
 
-                <local:CurvedCornersEntry
+                <local:ICustomEntryRenderer
                     x:Name="Entry_Voornaam"
                     Text="{Binding Voornaam}"
                     Placeholder="Voornaam"
                     CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
+                    HorizontalTextAlignment="Start"
+                    IsCurvedCornersEnabled="True"
+                    CornerRadius="18"
                     TextColor="White">
-                </local:CurvedCornersEntry>
-                <local:CurvedCornersEntry
+                </local:ICustomEntryRenderer>
+                <local:ICustomEntryRenderer
                     x:Name="Entry_Familienaam"
                     Text="{Binding Achternaam}"
                     Placeholder="Familienaam"
                     CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
+                    IsCurvedCornersEnabled="True"
+                    HorizontalTextAlignment="Start"
+                    CornerRadius="18"
                     TextColor="White">
-                </local:CurvedCornersEntry>
-                <local:CurvedCornersEntry
+                </local:ICustomEntryRenderer>
+                <local:ICustomEntryRenderer
                     x:Name="Entry_Email"
                     Text="{Binding Email}"
                     Placeholder="Email"
                     CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
+                    IsCurvedCornersEnabled="True"
+                    HorizontalTextAlignment="Start"
+                    CornerRadius="18"
                     TextColor="White">
-                </local:CurvedCornersEntry>
-                <local:CurvedCornersEntry
+                </local:ICustomEntryRenderer>
+                <local:ICustomEntryRenderer
                     x:Name="Entry_Password"
                     Text="{Binding Wachtwoord}"
                     Placeholder="Wachtwoord"
+                    IsPassword="True"
+                    HorizontalTextAlignment="Start"
+                    IsCurvedCornersEnabled="True"
                     CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
+                    CornerRadius="18"
                     TextColor="White">
-                </local:CurvedCornersEntry>
+                </local:ICustomEntryRenderer>
 
             </StackLayout>
             <StackLayout x:Name="Button">

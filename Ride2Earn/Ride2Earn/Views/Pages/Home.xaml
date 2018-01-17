@@ -20,32 +20,47 @@
                     </OnIdiom>
                 </StackLayout.Padding>
 
-                <local:CurvedCornersEntry
+                <local:ICustomEntryRenderer
                     Text="{Binding Start}"
                     x:Name="EntryStart"
                     Placeholder="Begin"
-                    CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
-                    TextColor="White">
-                </local:CurvedCornersEntry>
+                    CurvedBackgroundColor="Black"
+                    CornerRadius="18"
+                    IsCurvedCornersEnabled="True"
+                    BorderColor="Black"
+                    HorizontalTextAlignment="Start"
+                    PlaceholderColor="Red"
+                    TextColor="White"
+                    FontAttributes="Bold">
+                </local:ICustomEntryRenderer>
 
-                <local:CurvedCornersEntry
+                <local:ICustomEntryRenderer
                     Text="{Binding Einde}"
                     x:Name="EntryEinde"
                     Placeholder="Einde"
-                    CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
-                    TextColor="White">
-                </local:CurvedCornersEntry>
+                    CurvedBackgroundColor="Black"
+                    CornerRadius="18"
+                    IsCurvedCornersEnabled="True"
+                    BorderColor="Black"
+                    HorizontalTextAlignment="Start"
+                    PlaceholderColor="Red"
+                    TextColor="White"
+                    FontAttributes="Bold">
+                </local:ICustomEntryRenderer>
 
-                <local:CurvedCornersEntry
+                <local:ICustomEntryRenderer
                     Text="{Binding Gereden}"
                     x:Name="EntryGereden"
                     Placeholder="Gereden"
-                    CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"
-                    TextColor="White">
-                </local:CurvedCornersEntry>
+                    CurvedBackgroundColor="Black"
+                    CornerRadius="18"
+                    IsCurvedCornersEnabled="True"
+                    BorderColor="Black"
+                    HorizontalTextAlignment="Start"
+                    PlaceholderColor="Red"
+                    TextColor="White"
+                    FontAttributes="Bold">
+                </local:ICustomEntryRenderer>
                 <Button 
                     x:Name="btnBevestigen"
                     Clicked="AddEvent"

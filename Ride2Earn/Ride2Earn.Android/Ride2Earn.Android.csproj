@@ -192,8 +192,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomRenderer\CustomEntryRenderer.cs" />
     <Compile Include="CustomRenderer\FirstButtonRenderer.cs" />
-    <Compile Include="CustomRenderer\FirstEntryRenderer.cs" />
     <Compile Include="CustomRenderer\FirstLabelRenderer.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />

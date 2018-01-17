@@ -39,11 +39,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="CurvedCornersButton.cs" />
-    <Compile Include="CurvedCornersEntry.cs" />
     <Compile Include="CurvedCornersLabel.cs" />
     <Compile Include="Data\Ride2EarnDatabase.cs" />
     <Compile Include="Helpers\IFileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="ICustomEntryRenderer.cs" />
     <Compile Include="Klassen\Rit.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
