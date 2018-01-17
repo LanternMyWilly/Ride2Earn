@@ -26,8 +26,6 @@
                     </OnIdiom>
                 </StackLayout.Padding>
 
-                <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="True" />
-
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Straat"
                     Text="{Binding Straat}"
@@ -36,7 +34,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    TextColor="#e8e8e8"
+                    PlaceholderColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Nummer"
@@ -46,7 +45,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    TextColor="#e8e8e8"
+                    PlaceholderColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Postcode"
@@ -56,7 +56,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    TextColor="#e8e8e8"
+                    PlaceholderColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Gemeente"
@@ -66,7 +67,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    TextColor="#e8e8e8"
+                    PlaceholderColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_rknNummer"
@@ -76,7 +78,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    TextColor="#e8e8e8"
+                    PlaceholderColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
 
             </StackLayout>
@@ -85,6 +88,7 @@
                     x:Name="btnRegister"
                     Clicked="RegisterEvent"
                     Text="Registreren"
+                    TextColor="#e8e8e8"
                     Margin="0,25,0,0">
                 </Button>
             </StackLayout>

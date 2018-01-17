@@ -28,13 +28,14 @@ namespace Ride2Earn.Views.Register
         {
             btnRegister.BackgroundColor = Constants.BackgroundTextColor;
             btnRegister.TextColor = Constants.MainTextColor;
-            ActivitySpinner.IsVisible = false;
             LoginIcon.HeightRequest = Constants.LoginIconHeight;
 
             Entry_Gemeente.FontSize = 15.5;
             Entry_Nummer.FontSize = 15.5;
             Entry_Postcode.FontSize = 15.5;
             Entry_Straat.FontSize = 15.5;
+            Entry_Nummer.Text = string.Empty;
+            Entry_Postcode.Text = string.Empty;
 
             Entry_Straat.Completed += (s, e) => Entry_Nummer.Focus();
             Entry_Nummer.Completed += (s, e) => Entry_Postcode.Focus();

@@ -12,6 +12,7 @@ namespace Ride2Earn.Klassen
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Start { get; set; }
+        public DateTime Datum { get; set; }
         public string Einde { get; set; }
         public double Gereden { get; set; }
 

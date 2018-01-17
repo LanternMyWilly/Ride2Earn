@@ -3,14 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ride2Earn"
              x:Class="Ride2Earn.Views.Pages.Home"
-             BackgroundColor="#637775">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="Logo2.png" Text="Item 1" Priority="0" />
-    </ContentPage.ToolbarItems>
+             BackgroundColor="#e8e8e8">
     <ContentPage.Content>
         <StackLayout x:Name="MasterLayout">
-            <local:CurvedCornersLabel Text="Afstand" FontSize="20" FontFamily="Arial black" HorizontalTextAlignment="Center" TextColor="White" CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="15"></local:CurvedCornersLabel>
+            <Image x:Name="LoginIcon" Source="KM.png" WidthRequest="140" VerticalOptions="Center"/>
 
             <StackLayout x:Name="EntriesStack" VerticalOptions="CenterAndExpand">
                 <StackLayout.Padding>
@@ -21,57 +17,61 @@
                 </StackLayout.Padding>
 
                 <local:ICustomEntryRenderer
+                    Text="{Binding Datum}"
+                    x:Name="EntryDatum"
+                    Placeholder="Datum (jjjj-mm-dd)"
+                    CornerRadius="18"
+                    IsCurvedCornersEnabled="True"
+                    BorderColor="#637775"
+                    HorizontalTextAlignment="Start"
+                    PlaceholderColor="#637775"
+                    TextColor="#637775">
+                </local:ICustomEntryRenderer>
+
+                <local:ICustomEntryRenderer
                     Text="{Binding Start}"
                     x:Name="EntryStart"
-                    Placeholder="Begin"
-                    CurvedBackgroundColor="Black"
+                    Placeholder="Vertrek (adres)"
                     CornerRadius="18"
                     IsCurvedCornersEnabled="True"
-                    BorderColor="Black"
+                    BorderColor="#637775"
                     HorizontalTextAlignment="Start"
-                    PlaceholderColor="Red"
-                    TextColor="White"
-                    FontAttributes="Bold">
+                    PlaceholderColor="#637775"
+                    TextColor="#637775">
                 </local:ICustomEntryRenderer>
 
-                <local:ICustomEntryRenderer
+                    <local:ICustomEntryRenderer
                     Text="{Binding Einde}"
                     x:Name="EntryEinde"
-                    Placeholder="Einde"
-                    CurvedBackgroundColor="Black"
+                    Placeholder="Aankomst (adres)"
                     CornerRadius="18"
                     IsCurvedCornersEnabled="True"
-                    BorderColor="Black"
+                    BorderColor="#637775"
                     HorizontalTextAlignment="Start"
-                    PlaceholderColor="Red"
-                    TextColor="White"
-                    FontAttributes="Bold">
-                </local:ICustomEntryRenderer>
+                    PlaceholderColor="#637775"
+                    TextColor="#637775">
+                    </local:ICustomEntryRenderer>
 
-                <local:ICustomEntryRenderer
+                    <local:ICustomEntryRenderer
                     Text="{Binding Gereden}"
                     x:Name="EntryGereden"
-                    Placeholder="Gereden"
-                    CurvedBackgroundColor="Black"
+                    Placeholder="Aantal km"
                     CornerRadius="18"
                     IsCurvedCornersEnabled="True"
-                    BorderColor="Black"
+                    BorderColor="#637775"
                     HorizontalTextAlignment="Start"
-                    PlaceholderColor="Red"
-                    TextColor="White"
-                    FontAttributes="Bold">
-                </local:ICustomEntryRenderer>
-                <Button 
+                    PlaceholderColor="#637775"
+                    TextColor="#637775">
+                    </local:ICustomEntryRenderer>
+                
+                <local:CurvedCornersButton 
                     x:Name="btnBevestigen"
                     Clicked="AddEvent"
+                    CurvedBackgroundColor="#637775"
+                    CurvedCornerRadius="18"
+                    TextColor="#e8e8e8"
                     Text="Toevoegen"
                     Margin="0,25,0,0"/>
-                <Button 
-                    x:Name="btnVernieuwen"
-                    Clicked="RefreshEvent"
-                    Text="Vernieuwen"
-                    Margin="0,0,0,0"/>
-                <ListView x:Name="listView" BackgroundColor="White" Margin="0,0,0,10"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

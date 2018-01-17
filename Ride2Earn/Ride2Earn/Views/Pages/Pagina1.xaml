@@ -4,19 +4,9 @@
              x:Class="Ride2Earn.Views.Pages.Pagina1">
     <StackLayout Spacing="10"
                  Padding="20">
-        <Entry Text ="{Binding GebruikerVoornaam}" />
-        <Entry Text ="{Binding GebruikerAchternaam}" />
-        <Button Text="Gebruiker Toevoegen"
-                TextColor="White"
-                BackgroundColor="DodgerBlue"
-                FontSize="22"
-                Command="{Binding AddCommand}"/>
-        <Button Text="Refresh Gebruikers"
-                TextColor="White"
-                BackgroundColor="Fuchsia"
-                FontSize="22"
-                Command="{Binding RefreshCommand}" />
-        <ListView ItemsSource="{Binding Gebruikers}" />
+        <Button Clicked="Do">Test</Button>
+        <ListView x:Name="Test"></ListView>
+        <ListView x:Name="Test2"></ListView>
 
     </StackLayout>
 </ContentPage>

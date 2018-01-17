@@ -16,8 +16,8 @@
                         <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
                     </OnIdiom>
                 </StackLayout.Padding>
-                <local:CurvedCornersLabel x:Name="lblName" Text="Ride2Earn" FontSize="20" FontFamily="Arial black" HorizontalTextAlignment="Center" TextColor="White" CurvedBackgroundColor="#92afac"
-                    CurvedCornerRadius="18"></local:CurvedCornersLabel>
+                <local:CurvedCornersLabel x:Name="lblName" Text="Ride2Earn" FontSize="20" FontFamily="Arial black" HorizontalTextAlignment="Center" TextColor="#e8e8e8" CurvedBackgroundColor="#92afac"
+                    CurvedCornerRadius="18" ></local:CurvedCornersLabel>
             </StackLayout>
 
             <StackLayout x:Name="LoginEntriesStack" VerticalOptions="CenterAndExpand">
@@ -28,8 +28,6 @@
                     </OnIdiom>
                 </StackLayout.Padding>
 
-                <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
-
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Voornaam"
                     Text="{Binding Voornaam}"
@@ -38,7 +36,8 @@
                     HorizontalTextAlignment="Start"
                     IsCurvedCornersEnabled="True"
                     CornerRadius="18"
-                    TextColor="White">
+                    PlaceholderColor="#e8e8e8"
+                    TextColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Familienaam"
@@ -48,7 +47,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    PlaceholderColor="#e8e8e8"
+                    TextColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Email"
@@ -58,7 +58,8 @@
                     IsCurvedCornersEnabled="True"
                     HorizontalTextAlignment="Start"
                     CornerRadius="18"
-                    TextColor="White">
+                    PlaceholderColor="#e8e8e8"
+                    TextColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Password"
@@ -69,7 +70,8 @@
                     IsCurvedCornersEnabled="True"
                     CurvedBackgroundColor="#92afac"
                     CornerRadius="18"
-                    TextColor="White">
+                    PlaceholderColor="#e8e8e8"
+                    TextColor="#e8e8e8">
                 </local:ICustomEntryRenderer>
 
             </StackLayout>
@@ -78,6 +80,7 @@
                     x:Name="btnNext"
                     Clicked="NextProcedure"
                     Text="Volgende"
+                    TextColor="#e8e8e8"
                     Margin="0,30,0,0">
                 </Button>
             </StackLayout>

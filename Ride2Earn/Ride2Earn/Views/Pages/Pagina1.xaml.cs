@@ -15,7 +15,14 @@ namespace Ride2Earn.Views.Pages
     {
         public Pagina1()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            
+        }
+
+        async void Do(object sender, EventArgs e)
+        {
+            Test.ItemsSource = await App.Database.GetGebruikerAsync();
+            Test2.ItemsSource = await App.Database.GetRitAsync();
         }
 
         

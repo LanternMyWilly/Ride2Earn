@@ -19,6 +19,8 @@ namespace Ride2Earn.Views.Pages
             InitializeComponent();
             BindingContext = new Rit();
             EntryGereden.Text = string.Empty;
+            EntryDatum.Text = string.Empty;
+            
         }
 
         async void AddEvent(object sender, EventArgs e)
@@ -26,11 +28,10 @@ namespace Ride2Earn.Views.Pages
             var rit = (Rit)BindingContext;
             await App.Database.SaveRitAsync(rit);
             await Navigation.PopAsync();
-
-        }
-        async void RefreshEvent(object sender, EventArgs e)
-        {
-            listView.ItemsSource = await App.Database.GetGebruikerAsync();
+            EntryDatum.Text = string.Empty;
+            EntryEinde.Text = string.Empty;
+            EntryGereden.Text = string.Empty;
+            EntryStart.Text = string.Empty;
         }
     }
 }

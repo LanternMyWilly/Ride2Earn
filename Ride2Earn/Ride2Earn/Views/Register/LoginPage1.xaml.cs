@@ -26,7 +26,6 @@ namespace Ride2Earn.Views.Register
         {
             btnNext.BackgroundColor = Constants.BackgroundTextColor;
             btnNext.TextColor = Constants.MainTextColor;
-            ActivitySpinner.IsVisible = false;
             LoginIcon.HeightRequest = Constants.LoginIconHeight;
 
             Entry_Password.FontSize = 15.5;
