@@ -16,13 +16,16 @@ namespace Ride2Earn.Views.Pages
         public Pagina1()
         {
             InitializeComponent();
-            
-        }
-
-        async void Do(object sender, EventArgs e)
-        {
-            Test.ItemsSource = await App.Database.GetGebruikerAsync();
-            Test2.ItemsSource = await App.Database.GetRitAsync();
+            lblVoornaam.FontSize = 20;
+            lblAchternaam.FontSize = 20;
+            lblEmail.FontSize = 20;
+            lblGemeente.FontSize = 20;
+            lblGereden.FontSize = 20;
+            lblNummer.FontSize = 20;
+            lblPostcode.FontSize = 20;
+            lblRKnNummer.FontSize = 20;
+            lblStraat.FontSize = 20;
+            lblWachtwoord.FontSize = 20;
         }
 
         
