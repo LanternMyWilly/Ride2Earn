@@ -16,7 +16,6 @@ namespace Ride2Earn
     public partial class App : Application
     {
         static Ride2EarnDatabase database;
-
         public string IsFirstTime
         {
             get { return Settings.GeneralSettings; }

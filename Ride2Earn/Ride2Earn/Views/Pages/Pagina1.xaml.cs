@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Ride2Earn.Data;
+using Ride2Earn.Klassen;
 
 namespace Ride2Earn.Views.Pages
 {
@@ -16,15 +18,18 @@ namespace Ride2Earn.Views.Pages
         public Pagina1()
         {
             InitializeComponent();
+            BindingContext = new Gebruiker();
+        }
+
+        async protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Test.ItemsSource = await App.Database.GetGebruikerAsync();
+        }
+
+        async void kkr(object sender, EventArgs e)
+        {
             
         }
-
-        async void Do(object sender, EventArgs e)
-        {
-            Test.ItemsSource = await App.Database.GetGebruikerAsync();
-            Test2.ItemsSource = await App.Database.GetRitAsync();
-        }
-
-        
     }
 }

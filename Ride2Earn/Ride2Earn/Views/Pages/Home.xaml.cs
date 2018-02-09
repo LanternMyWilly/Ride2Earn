@@ -26,7 +26,7 @@ namespace Ride2Earn.Views.Pages
         async void AddEvent(object sender, EventArgs e)
         {
             var rit = (Rit)BindingContext;
-            await App.Database.SaveRitAsync(rit);
+            //await App.Database.SaveRitAsync(rit);
             await Navigation.PopAsync();
             EntryDatum.Text = string.Empty;
             EntryEinde.Text = string.Empty;
