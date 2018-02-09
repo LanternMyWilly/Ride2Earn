@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Ride2Earn.Data;
+using Ride2Earn.Klassen;
 
 namespace Ride2Earn.Views.Pages
 {
@@ -16,18 +18,18 @@ namespace Ride2Earn.Views.Pages
         public Pagina1()
         {
             InitializeComponent();
-            lblVoornaam.FontSize = 20;
-            lblAchternaam.FontSize = 20;
-            lblEmail.FontSize = 20;
-            lblGemeente.FontSize = 20;
-            lblGereden.FontSize = 20;
-            lblNummer.FontSize = 20;
-            lblPostcode.FontSize = 20;
-            lblRKnNummer.FontSize = 20;
-            lblStraat.FontSize = 20;
-            lblWachtwoord.FontSize = 20;
+            BindingContext = new Gebruiker();
         }
 
-        
+        async protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Test.ItemsSource = await App.Database.GetGebruikerAsync();
+        }
+
+        async void kkr(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

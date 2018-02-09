@@ -45,6 +45,7 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="ICustomEntryRenderer.cs" />
     <Compile Include="ICustomLabelRenderer.cs" />
+    <Compile Include="Klassen\Business.cs" />
     <Compile Include="Klassen\Rit.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

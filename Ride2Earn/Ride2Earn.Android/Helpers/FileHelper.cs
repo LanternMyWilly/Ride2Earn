@@ -15,7 +15,7 @@ using Ride2Earn.Droid.Helpers;
 using Ride2Earn.Helpers;
 using Xamarin.Forms;
 
-[assembly : Xamarin.Forms.Dependency(typeof(FileHelper))]
+[assembly: Xamarin.Forms.Dependency(typeof(FileHelper))]
 namespace Ride2Earn.Droid.Helpers
 {
     public class FileHelper : IFileHelper
@@ -24,7 +24,7 @@ namespace Ride2Earn.Droid.Helpers
         {
             string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string libfolder = Path.Combine(path, "..", "Library", "Databases");
-            if(!Directory.Exists(libfolder))
+            if (!Directory.Exists(libfolder))
             {
                 Directory.CreateDirectory(libfolder);
             }

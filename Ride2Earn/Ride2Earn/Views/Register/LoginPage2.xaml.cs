@@ -34,8 +34,6 @@ namespace Ride2Earn.Views.Register
             Entry_Nummer.FontSize = 15.5;
             Entry_Postcode.FontSize = 15.5;
             Entry_Straat.FontSize = 15.5;
-            Entry_Nummer.Text = string.Empty;
-            Entry_Postcode.Text = string.Empty;
 
             Entry_Straat.Completed += (s, e) => Entry_Nummer.Focus();
             Entry_Nummer.Completed += (s, e) => Entry_Postcode.Focus();
@@ -49,7 +47,7 @@ namespace Ride2Earn.Views.Register
             var gebruiker = (Gebruiker)BindingContext;
             await App.Database.SaveGebruikerAsync(gebruiker);
             await Navigation.PopAsync();
-            Application.Current.MainPage = new NavigationPage(new MasterDetail());  
+            Application.Current.MainPage = new NavigationPage(new MasterDetail());
         }
     }
 }
