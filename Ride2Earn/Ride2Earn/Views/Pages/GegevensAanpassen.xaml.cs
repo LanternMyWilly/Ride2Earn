@@ -1,21 +1,18 @@
-﻿using Ride2Earn.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Ride2Earn.Klassen;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Ride2Earn.Data;
-using Ride2Earn.Klassen;
 
 namespace Ride2Earn.Views.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Pagina1 : ContentPage
+    public partial class GegevensAanpassen : ContentPage
     {
-        public Pagina1()
+        public GegevensAanpassen()
         {
             InitializeComponent();
             BindingContext = new Gebruiker();
@@ -25,11 +22,6 @@ namespace Ride2Earn.Views.Pages
         {
             base.OnAppearing();
             lstGebruiker.ItemsSource = await App.Database.GetGebruikerAsync();
-        }
-
-        async void Aanpassen(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new GegevensAanpassen());
         }
     }
 }

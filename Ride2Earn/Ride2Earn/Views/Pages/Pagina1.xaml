@@ -6,126 +6,90 @@
     <ContentPage.Content>
         <StackLayout x:Name="MasterLayout">
             <Image x:Name="LoginIcon" Source="PersonPagina.png" WidthRequest="120" VerticalOptions="Center"/>
-            <ListView x:Name="Test">
+            <StackLayout Orientation="Vertical" Padding="10,0,10,15">
+            <ListView x:Name="lstGebruiker" VerticalOptions="FillAndExpand" RowHeight="250" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Grid.Row="1" Orientation="Horizontal">
-                                <StackLayout.Padding>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>20,10,20,0</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
-                                    </OnIdiom>
-                                </StackLayout.Padding>
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblVoornaam" 
+                        <ViewCell IsEnabled="False">
+                                <Grid>
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblVoornaam"
+                                    Grid.Row="0"
+                                    Grid.Column="0"    
                                     CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
                                     Text="{Binding Voornaam}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                                <local:ICustomLabelRenderer 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
                                     x:Name="lblAchternaam" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Row="0"
+                                    Grid.Column="1"   
                                     Text="{Binding Achternaam}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="20,10,20,0">
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblEmail" 
-                                    CornerRadius="18" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblEmail" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Row="1"
+                                    Grid.Column="0"   
                                     Text="{Binding Email}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblWachtwoord" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomEntryRenderer 
+                                    x:Name="EntryWachtwoord" 
                                     CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
-                                    Text="{Binding Wachtwoord}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Grid.Row="3" Orientation="Horizontal" Padding="20,10,20,0">
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblStraat" 
-                                    CornerRadius="18" 
+                                    TextColor="Gray"
+                                    IsPassword="True"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding Wachtwoord}" />
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblStraat" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Row="2"
+                                    Grid.Column="0"   
                                     Text="{Binding Straat}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblNummer" 
-                                    CornerRadius="18" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblNummer" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Row="2"
+                                    Grid.Column="1"   
                                     Text="{Binding Nummer}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource SmallLabel}"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Grid.Row="4" Orientation="Horizontal" Padding="20,10,20,0">
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblPostcode" 
-                                    CornerRadius="18" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblPcode" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Row="3"
+                                    Grid.Column="0"   
                                     Text="{Binding Pcode}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource SmallLabel}"/>
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblGemeente" 
-                                    CornerRadius="18" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblGemeente" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Row="3"
+                                    Grid.Column="1"   
                                     Text="{Binding Gemeente}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Grid.Row="5" Orientation="Horizontal" Padding="20,10,20,0">
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblRKnNummer" 
-                                    CornerRadius="18" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
+                                    x:Name="lblRknNummer" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
+                                    Grid.Column="0"
+                                    Grid.Row="4"
                                     Text="{Binding RknNummer}" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Grid.Row="6" Orientation="Horizontal" Padding="20,10,20,0">
-                                <local:ICustomLabelRenderer 
-                                    FontSize="20" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    Text="Aantal km gereden: " 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource LargeLabel}"/>
-                                <local:ICustomLabelRenderer 
-                                    x:Name="lblGereden" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    Text="nr" 
-                                    VerticalTextAlignment="Center" 
-                                    Style="{DynamicResource SmallLabel}"/>
-                            </StackLayout>
-                        </ViewCell>
+                                    VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-                <StackLayout Padding="20,10,20,0">
-                <local:CurvedCornersButton 
+                    <local:CurvedCornersButton 
                     Text="Aanpassen" 
                     CurvedCornerRadius="18"
-                    Clicked="kkr"
+                    Clicked="Aanpassen"
                     CurvedBackgroundColor="#637775" 
                     TextColor="#e8e8e8"/>
-            </StackLayout>
+                </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

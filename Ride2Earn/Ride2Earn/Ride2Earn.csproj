@@ -57,6 +57,9 @@
     <Compile Include="Views\Menu\MasterDetail.xaml.cs">
       <DependentUpon>MasterDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\GegevensAanpassen.xaml.cs">
+      <DependentUpon>GegevensAanpassen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Pages\Vergoedingen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Pages\GegevensAanpassen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
