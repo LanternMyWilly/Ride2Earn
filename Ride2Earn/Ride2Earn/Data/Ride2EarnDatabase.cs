@@ -50,5 +50,10 @@ namespace Ride2Earn.Data
         {
             return database.Table<Gebruiker>().ToListAsync();
         }
+
+        public Task<int> EditGebruiker(Gebruiker a)
+        {
+            return database.UpdateAsync(a);
+        }
     }
 }

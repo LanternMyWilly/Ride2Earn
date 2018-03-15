@@ -29,7 +29,16 @@ namespace Ride2Earn.Views.Pages
 
         async void Aanpassen(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GegevensAanpassen());
+            lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];
+            await Navigation.PushAsync(new GegevensAanpassen() { BindingContext = lstGebruiker.SelectedItem as Gebruiker });
         }
+
+        /*async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                //await Navigation.PushAsync(new GegevensAanpassen() { BindingContext = e.SelectedItem as Gebruiker });
+            }
+        }*/
     }
 }

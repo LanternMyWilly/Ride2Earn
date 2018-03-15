@@ -7,91 +7,94 @@
         <StackLayout x:Name="MasterLayout">
             <Image x:Name="LoginIcon" Source="PersonPagina.png" WidthRequest="120" VerticalOptions="Center"/>
             <StackLayout Orientation="Vertical" Padding="10,0,10,10">
-                <ListView x:Name="lstGebruiker" VerticalOptions="FillAndExpand" RowHeight="250" SeparatorVisibility="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid>
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryVoornaam"
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    CornerRadius="18"
-                                    TextColor="Gray"
-                                    IsCurvedCornersEnabled="True" 
-                                    Text="{Binding Voornaam}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryAchternaam" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Row="0"
-                                    Grid.Column="1"   
-                                    Text="{Binding Achternaam}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryEmail" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Row="1"
-                                    Grid.Column="0"   
-                                    Text="{Binding Email}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryWachtwoord" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Row="1"
-                                    Grid.Column="1"
-                                    Text="{Binding Wachtwoord}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryStraat" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Row="2"
-                                    Grid.Column="0"   
-                                    Text="{Binding Straat}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryNummer" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Row="2"
-                                    Grid.Column="1"   
-                                    Text="{Binding Nummer}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryPcode" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True"
-                                    TextColor="Gray"
-                                    Grid.Row="3"
-                                    Grid.Column="0"   
-                                    Text="{Binding Pcode}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryGemeente" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Row="3"
-                                    Grid.Column="1"   
-                                    Text="{Binding Gemeente}" />
-                                    <local:ICustomEntryRenderer 
-                                    x:Name="EntryRknNummer" 
-                                    CornerRadius="18" 
-                                    IsCurvedCornersEnabled="True" 
-                                    TextColor="Gray"
-                                    Grid.Column="0"
-                                    Grid.Row="4"
-                                    Text="{Binding RknNummer}" />
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <Grid>
+                    <local:ICustomLabelRenderer 
+                        x:Name="EntryID"
+                        IsVisible="False"
+                        Grid.Row="0"
+                        Grid.Column="0"    
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        Text="{Binding ID}" 
+                        VerticalTextAlignment="Center"/>
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryVoornaam"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        CornerRadius="18"
+                        TextColor="Gray"
+                        IsCurvedCornersEnabled="True" 
+                        Text="{Binding Voornaam}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryAchternaam" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Row="0"
+                        Grid.Column="1"   
+                        Text="{Binding Achternaam}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryEmail" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Row="1"
+                        Grid.Column="0"   
+                        Text="{Binding Email}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryWachtwoord" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding Wachtwoord}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryStraat" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Row="2"
+                        Grid.Column="0"   
+                        Text="{Binding Straat}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryNummer" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Row="2"
+                        Grid.Column="1"   
+                        Text="{Binding Nummer}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryPcode" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True"
+                        TextColor="Gray"
+                        Grid.Row="3"
+                        Grid.Column="0"   
+                        Text="{Binding Pcode}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryGemeente" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Row="3"
+                        Grid.Column="1"   
+                        Text="{Binding Gemeente}" />
+                    <local:ICustomEntryRenderer 
+                        x:Name="EntryRknNummer" 
+                        CornerRadius="18" 
+                        IsCurvedCornersEnabled="True" 
+                        TextColor="Gray"
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="{Binding RknNummer}" />
+                </Grid>
+                            
                 <local:CurvedCornersButton 
                     Text="Aanpassen" 
                     CurvedCornerRadius="18"
+                    Clicked="Update"
                     CurvedBackgroundColor="#637775" 
                     TextColor="#e8e8e8"/>
             </StackLayout>

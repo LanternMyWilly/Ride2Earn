@@ -13,6 +13,15 @@
                         <ViewCell IsEnabled="False">
                                 <Grid>
                                     <local:ICustomLabelRenderer 
+                                    x:Name="lblID"
+                                    IsVisible="False"
+                                    Grid.Row="0"
+                                    Grid.Column="0"    
+                                    CornerRadius="18" 
+                                    IsCurvedCornersEnabled="True" 
+                                    Text="{Binding ID}" 
+                                    VerticalTextAlignment="Center"/>
+                                    <local:ICustomLabelRenderer 
                                     x:Name="lblVoornaam"
                                     Grid.Row="0"
                                     Grid.Column="0"    

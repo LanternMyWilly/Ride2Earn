@@ -15,13 +15,14 @@ namespace Ride2Earn.Views.Pages
         public GegevensAanpassen()
         {
             InitializeComponent();
-            BindingContext = new Gebruiker();
+
         }
 
-        async protected override void OnAppearing()
+        async void Update(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            lstGebruiker.ItemsSource = await App.Database.GetGebruikerAsync();
+            var aanpasen = (Gebruiker)BindingContext;
+            await App.Database.SaveGebruikerAsync(aanpasen);
+            await Navigation.PopAsync();
         }
     }
 }
