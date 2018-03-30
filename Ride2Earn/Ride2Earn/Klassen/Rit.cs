@@ -16,9 +16,11 @@ namespace Ride2Earn.Klassen
         public string Einde { get; set; }
         public double Gereden { get; set; }
 
-        public override string ToString()
+        public string GeredenKM()
         {
-            return $"{Gereden}";
+            string r;
+            r = Gereden + " km";
+            return r;
         }
     }
 
