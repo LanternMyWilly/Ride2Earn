@@ -9,6 +9,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Ride2Earn.Data;
 using Ride2Earn.Klassen;
+using Ride2Earn.Views.Dialogs;
+using Rg.Plugins.Popup.Services;
 
 namespace Ride2Earn.Views.Pages
 {
@@ -26,12 +28,56 @@ namespace Ride2Earn.Views.Pages
             base.OnAppearing();
             lstGebruiker.ItemsSource = await App.Database.GetGebruikerAsync();
         }
+        private async Task<string> Aanpassen()
+        {
+            // create the TextInputView
+            var inputView = new TextInputView(
+                "Geef je wachtwoord op", "wachtwoord...", "OK", "Annuleer", "Oeps! Dit veld mag niet leeg zijn!");
 
-        async void Aanpassen(object sender, EventArgs e)
+            // create the Transparent Popup Page
+            // of type string since we need a string return
+            var popup = new InputAlertDialogBase<string>(inputView);
+
+            // subscribe to the TextInputView's Button click event
+            inputView.SaveButtonEventHandler +=
+                (sender, obj) =>
+                {
+                    if (!string.IsNullOrEmpty(((TextInputView)sender).TextInputResult))
+                    {
+                        ((TextInputView)sender).IsValidationLabelVisible = false;
+                        popup.PageClosedTaskCompletionSource.SetResult(((TextInputView)sender).TextInputResult);
+                    }
+                    else
+                    {
+                        ((TextInputView)sender).IsValidationLabelVisible = true;
+                    }
+                };
+
+            // subscribe to the TextInputView's Button click event
+            inputView.CancelButtonEventHandler +=
+                (sender, obj) =>
+                {
+                    popup.PageClosedTaskCompletionSource.SetResult(null);
+                };
+
+            // Push the page to Navigation Stack
+            await PopupNavigation.PushAsync(popup);
+
+            // await for the user to enter the text input
+            var result = await popup.PageClosedTask;
+
+            // Pop the page from Navigation Stack
+            await PopupNavigation.PopAsync();
+
+            // return user inserted text value
+            return result;
+        }
+        /*async void Aanpassen(object sender, EventArgs e)
         {
             lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];
             await Navigation.PushAsync(new GegevensAanpassen() { BindingContext = lstGebruiker.SelectedItem as Gebruiker });
-        }
+            await Navigation.PushAsync(new TextInputView("a","b","c","d"));
+        }*/
 
         /*async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

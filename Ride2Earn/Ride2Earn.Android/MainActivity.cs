@@ -21,8 +21,8 @@ namespace Ride2Earn.Droid
             ToolbarResource = Resource.Layout.Toolbar;
              
             base.OnCreate(bundle);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            
             LoadApplication(new App());
 
             var mainPage = new MainPage();//this could be content page
