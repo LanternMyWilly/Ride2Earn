@@ -209,6 +209,7 @@
   <ItemGroup>
     <Compile Include="CustomLabelRenderer.cs" />
     <Compile Include="CustomRenderer\CustomEntryRenderer.cs" />
+    <Compile Include="CustomRenderer\ExtendedViewCellRenderer.cs" />
     <Compile Include="CustomRenderer\FirstButtonRenderer.cs" />
     <Compile Include="CustomRenderer\FirstLabelRenderer.cs" />
     <Compile Include="Helpers\FileHelper.cs" />

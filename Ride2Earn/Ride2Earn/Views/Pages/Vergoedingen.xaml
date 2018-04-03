@@ -7,7 +7,7 @@
             <ListView x:Name="lstRitten">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding GeredenKM}" Detail="{Binding Datum}"/>
+                        <TextCell Text="{Binding Gereden, StringFormat='{0} km'}" Detail="{Binding Datum,StringFormat='Datum: {0:dd/MM/yyyy}'}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

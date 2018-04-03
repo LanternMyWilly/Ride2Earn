@@ -15,13 +15,6 @@ namespace Ride2Earn.Klassen
         public DateTime Datum { get; set; }
         public string Einde { get; set; }
         public double Gereden { get; set; }
-
-        public string GeredenKM()
-        {
-            string r;
-            r = Gereden + " km";
-            return r;
-        }
     }
 
 }

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ride2Earn.Views.Menu;assembly=Ride2Earn"
              xmlns:lmao="clr-namespace:Ride2Earn.Views.Pages;assembly=Ride2Earn"
+             xmlns:selected="clr-namespace:Ride2Earn;assembly=Ride2Earn"
              x:Class="Ride2Earn.Views.Menu.MasterDetail">
 
     <MasterDetailPage.Master>
@@ -31,7 +32,7 @@
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <selected:ExtendedViewCell SelectedBackgroundColor="#637775">
 
                                 <!-- Main design for our menu items -->
                                 <StackLayout VerticalOptions="FillAndExpand"
@@ -50,7 +51,7 @@
                          TextColor="Black"
                                            />
                                 </StackLayout>
-                            </ViewCell>
+                            </selected:ExtendedViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

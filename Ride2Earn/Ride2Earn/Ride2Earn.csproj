@@ -41,6 +41,7 @@
     <Compile Include="CurvedCornersButton.cs" />
     <Compile Include="CurvedCornersLabel.cs" />
     <Compile Include="Data\Ride2EarnDatabase.cs" />
+    <Compile Include="ExtendedViewCell.cs" />
     <Compile Include="Helpers\IFileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="ICustomEntryRenderer.cs" />
