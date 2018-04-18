@@ -1,16 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ride2Earn.Views.Pages.Vergoedingen">
+             x:Class="Ride2Earn.Views.Pages.Vergoedingen"
+             xmlns:selected="clr-namespace:Ride2Earn;assembly=Ride2Earn">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="10,0,10,15">
-            <ListView x:Name="lstRitten" ItemsSource="{Binding Path=Ritten}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Gereden, StringFormat='{0} km'}" Detail="{Binding Datum,StringFormat='Datum: {0:dd/MM/yyyy}'}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+        <StackLayout x:Name="MasterLayout">
+            <Image x:Name="BankCardIcon" Source="Bankcard.png" WidthRequest="120" VerticalOptions="Center"/>
+            <StackLayout Orientation="Vertical" Padding="10,0,10,15">
+                <ListView x:Name="lstRitten" RowHeight="55">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <selected:ExtendedViewCell SelectedBackgroundColor="#637775">
+                                <Grid>
+                                    <Label x:Name="kilometers" Text="{Binding Gereden, StringFormat='{0} km'}" Grid.Row="0" FontSize="Large"/>
+                                    <Label x:Name="Datum" Text="{Binding Datum,StringFormat='Datum: {0:dd/MM/yyyy}'}" Grid.Row="1" FontSize="Micro"/>
+                                </Grid>
+                            </selected:ExtendedViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

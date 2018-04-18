@@ -23,7 +23,8 @@ namespace Ride2Earn.Views.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            BindingContext = dataAccess;          
+            BindingContext = dataAccess;
+            lstRitten.ItemsSource = dataAccess.GetRitten();
         }
     }
 }

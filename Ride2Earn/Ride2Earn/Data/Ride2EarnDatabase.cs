@@ -44,6 +44,14 @@ namespace Ride2Earn.Data
             }
         }
 
+        public IEnumerable<Rit> GetRitten()
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("SELECT * FROM Ritten").AsEnumerable();
+            }
+        }
+
         public int SaveGebruikerAsync(Gebruiker a)
         {
             lock(collisionLock)

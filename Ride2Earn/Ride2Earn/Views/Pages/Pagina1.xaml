@@ -11,7 +11,7 @@
             <ListView x:Name="lstGebruiker" VerticalOptions="FillAndExpand" RowHeight="250" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                            <selected:ExtendedViewCell SelectedBackgroundColor="White">
+                            <selected:ExtendedViewCell SelectedBackgroundColor="#e8e8e8">
                                 <Grid>
                                     <local:ICustomLabelRenderer 
                                     x:Name="lblID"

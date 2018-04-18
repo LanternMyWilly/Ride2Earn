@@ -19,10 +19,8 @@ namespace Ride2Earn.Views.Pages
     {
         private Ride2EarnDatabase dataAccess;
         private Business bus;
-        private Boolean test;
         public Pagina1()
         {
-            test = true;
             InitializeComponent();
             bus = new Business();
             dataAccess = new Ride2EarnDatabase();
@@ -34,15 +32,6 @@ namespace Ride2Earn.Views.Pages
             lstGebruiker.ItemsSource = dataAccess.GetGebruiker();
             BindingContext = this.dataAccess;
         }
-
-        /*void Aanpassen(object sender, EventArgs e)
-        {
-            //if (test == true)
-            //{
-            lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];
-            Navigation.PushAsync(new GegevensAanpassen() { BindingContext = lstGebruiker.SelectedItem as Gebruiker });
-            //}
-        }*/
 
         private async Task<string> Aanpassen()
         {
@@ -92,12 +81,5 @@ namespace Ride2Earn.Views.Pages
 
             
         }
-
-        
-        /*async void Aanpassen(object sender, EventArgs e)
-        {
-            lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];
-            await Navigation.PushAsync(new GegevensAanpassen() { BindingContext = lstGebruiker.SelectedItem as Gebruiker });
-        }*/
     }
 }
