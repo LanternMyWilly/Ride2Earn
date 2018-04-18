@@ -39,11 +39,11 @@ namespace Ride2Earn.Views.Pages
                 EntryEinde.Text = string.Empty;
                 EntryGereden.Text = string.Empty;
                 EntryStart.Text = string.Empty;
-                DisplayAlert("Succesvol", "Rit succesvol opgeslagen", "OK");
+                DisplayAlert("Succesvol", "Rit succesvol opgeslagen.", "OK");
             }
             else
             {
-                DisplayAlert("Mislukt", "Gelieve alle velden correct in te vullen", "OK");
+                DisplayAlert("Mislukt", "Gelieve alle velden correct in te vullen.", "OK");
             }           
         }
     }
