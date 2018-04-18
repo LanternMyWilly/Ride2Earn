@@ -15,7 +15,6 @@ namespace Ride2Earn
 {
     public partial class App : Application
     {
-        static Ride2EarnDatabase database;
         public string IsFirstTime
         {
             get { return Settings.GeneralSettings; }
@@ -42,18 +41,6 @@ namespace Ride2Earn
                 MainPage = new MasterDetail();
             }
 
-        }
-
-        public static Ride2EarnDatabase Database
-        {
-            get
-            {
-                if (database == null)
-                {
-                    database = new Ride2EarnDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("Ride2EarnDatabase.db3"));
-                }
-                return database;
-            }
         }
 
         protected override void OnStart()

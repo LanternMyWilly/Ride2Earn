@@ -17,28 +17,40 @@ namespace Ride2Earn.Views.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Pagina1 : ContentPage
     {
-        private Gebruiker a;
-        private string ww;
+        private Ride2EarnDatabase dataAccess;
+        private Business bus;
+        private Boolean test;
         public Pagina1()
         {
-            a = new Gebruiker();
+            test = true;
             InitializeComponent();
-            BindingContext = a;
+            bus = new Business();
+            dataAccess = new Ride2EarnDatabase();
         }
 
-        async protected override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            lstGebruiker.ItemsSource = await App.Database.GetGebruikerAsync();
-            a.Wachtwoord = ww;
+            lstGebruiker.ItemsSource = dataAccess.GetGebruiker();
+            BindingContext = this.dataAccess;
         }
+
+        /*void Aanpassen(object sender, EventArgs e)
+        {
+            //if (test == true)
+            //{
+            lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];
+            Navigation.PushAsync(new GegevensAanpassen() { BindingContext = lstGebruiker.SelectedItem as Gebruiker });
+            //}
+        }*/
+
         private async Task<string> Aanpassen()
         {
             var result = string.Empty;
             // create the TextInputView
             var inputView = new TextInputView(
                 "Geef je wachtwoord op", "wachtwoord...", "OK", "Annuleer", "Onjuist wachtwoord!");
-
+            
             // create the Transparent Popup Page
             // of type string since we need a string return
             var popup = new InputAlertDialogBase<string>(inputView);
@@ -47,19 +59,18 @@ namespace Ride2Earn.Views.Pages
             inputView.SaveButtonEventHandler +=
                 (sender, obj) =>
                 {
-                    if (!string.IsNullOrEmpty(((TextInputView)sender).TextInputResult))
+                    if (bus.Vergelijken(inputView.TextInputResult) == true)
                     {
-                        ((TextInputView)sender).IsValidationLabelVisible = true;
+                        ((TextInputView)sender).IsValidationLabelVisible = false;
+                        popup.PageClosedTaskCompletionSource.SetResult(((TextInputView)sender).TextInputResult);
                         lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];
                         Navigation.PushAsync(new GegevensAanpassen() { BindingContext = lstGebruiker.SelectedItem as Gebruiker });
                     }
                     else
                     {
-                        ((TextInputView)sender).IsValidationLabelVisible = false;
-                        popup.PageClosedTaskCompletionSource.SetResult(((TextInputView)sender).TextInputResult);
+                        ((TextInputView)sender).IsValidationLabelVisible = true;
                     }
                 };
-
             // subscribe to the TextInputView's Button click event
             inputView.CancelButtonEventHandler +=
                 (sender, obj) =>
@@ -78,7 +89,11 @@ namespace Ride2Earn.Views.Pages
 
             // return user inserted text value
             return result;
+
+            
         }
+
+        
         /*async void Aanpassen(object sender, EventArgs e)
         {
             lstGebruiker.SelectedItem = (lstGebruiker.ItemsSource as List<Gebruiker>)[0];

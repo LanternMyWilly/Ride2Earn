@@ -8,30 +8,42 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Ride2Earn.Klassen;
+using Ride2Earn.Data;
 
 namespace Ride2Earn.Views.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : ContentPage
     {
+        private Ride2EarnDatabase dataAccess;
         public Home()
         {
             InitializeComponent();
+            EntryGereden.Text = string.Empty;
+            EntryDatum.Text = string.Empty;
             BindingContext = new Rit();
+            dataAccess = new Ride2EarnDatabase();
             EntryGereden.Text = string.Empty;
             EntryDatum.Text = string.Empty;
             
         }
 
-        async void AddEvent(object sender, EventArgs e)
+        void AddEvent(object sender, EventArgs e)
         {
             var rit = (Rit)BindingContext;
-            await App.Database.SaveRitAsync(rit);
-            await Navigation.PopAsync();
-            EntryDatum.Text = string.Empty;
-            EntryEinde.Text = string.Empty;
-            EntryGereden.Text = string.Empty;
-            EntryStart.Text = string.Empty;
+            if (EntryDatum.Text != string.Empty && EntryEinde.Text != string.Empty && EntryStart.Text != string.Empty && EntryGereden.Text != string.Empty)
+            {
+                dataAccess.SaveRit(rit);
+                Navigation.PopAsync();
+                EntryDatum.Text = string.Empty;
+                EntryEinde.Text = string.Empty;
+                EntryGereden.Text = string.Empty;
+                EntryStart.Text = string.Empty;
+            }
+            else
+            {
+                //messagebox
+            }           
         }
     }
 }

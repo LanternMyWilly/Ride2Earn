@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Ride2Earn.Klassen;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +12,7 @@ namespace Ride2Earn.Views.Dialogs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TextInputView : ContentView
     {
+        private Business bus;
         // public event handler to expose 
         // the Save button's click event
         public EventHandler SaveButtonEventHandler { get; set; }
@@ -63,7 +64,7 @@ namespace Ride2Earn.Views.Dialogs
             string saveButtonText, string cancelButtonText, string validationText)
         {
             InitializeComponent();
-
+            bus = new Business();
             // update the Element's textual values
             TitleLabel.Text = titleText;
             InputEntry.Placeholder = placeHolderText;
@@ -81,6 +82,7 @@ namespace Ride2Earn.Views.Dialogs
         {
             // invoke the event handler if its being subscribed
             SaveButtonEventHandler?.Invoke(this, e);
+            bus.Vergelijken(InputEntry.Text);
         }
 
         private void CancelButton_Clicked(object sender, EventArgs e)

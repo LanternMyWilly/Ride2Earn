@@ -8,6 +8,6 @@ namespace Ride2Earn.Helpers
 {
     public interface IFileHelper
     {
-        string GetLocalFilePath(string filename);
+        SQLite.SQLiteConnection DbConnection();
     }
 }

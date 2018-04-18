@@ -10,26 +10,46 @@ namespace Ride2Earn.Klassen
     class Business
     {
         private Ride2EarnDatabase _db;
-        private IEnumerable<Gebruiker> _gebruiker;
+        private IEnumerable<Gebruiker> _Wachtwoord;
 
-        public IEnumerable<Gebruiker> Gebruikers
+        public IEnumerable<Gebruiker> Wachtwoorden
         {
-            get { return _gebruiker; }
-            set { _gebruiker = value; }
+            get { return _Wachtwoord; }
+            set { _Wachtwoord = value; }
         }
 
-        /*public Business()
+        public Business()
         {
             _db = new Ride2EarnDatabase();
-            _gebruiker = _db.GetVoornaam();
-        }*/
+            _Wachtwoord = _db.GetWW();
+        }
 
-        public string Voornaam()
+        /*public string Voornaam()
         {
             string a = string.Empty;
             foreach (Gebruiker b in Gebruikers)
             {
-                a = b.ToString();
+                a = b.T();
+            }
+            return a;
+        }*/
+
+        public bool Vergelijken(string ww)
+        {
+            string b = string.Empty;
+            foreach (Gebruiker c in Wachtwoorden)
+            {
+                b = c.TWW();
+            }
+
+            bool a;
+            if (b == ww)
+            {
+                a = true;
+            }
+            else
+            {
+                a = false;
             }
             return a;
         }

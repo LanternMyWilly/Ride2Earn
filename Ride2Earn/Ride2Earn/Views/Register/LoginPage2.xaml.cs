@@ -10,15 +10,18 @@ using Ride2Earn.Models;
 using Ride2Earn.Views.Register;
 using Ride2Earn.Views.Menu;
 using Ride2Earn.Klassen;
+using Ride2Earn.Data;
 
 namespace Ride2Earn.Views.Register
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage2 : ContentPage
     {
+        private Ride2EarnDatabase dataAccess;
         public LoginPage2(Gebruiker b)
         {
             InitializeComponent();
+            dataAccess = new Ride2EarnDatabase();
             BindingContext = b;
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -44,11 +47,11 @@ namespace Ride2Earn.Views.Register
             Entry_rknNummer.Completed += (s, e) => RegisterEvent(s, e);
         }
 
-        async void RegisterEvent(object sender, EventArgs e)
+        void RegisterEvent(object sender, EventArgs e)
         {
             var gebruiker = (Gebruiker)BindingContext;
-            await App.Database.SaveGebruikerAsync(gebruiker);
-            await Navigation.PopAsync();
+            dataAccess.SaveGebruikerAsync(gebruiker);
+            Navigation.PopAsync();
             Application.Current.MainPage = new NavigationPage(new MasterDetail());
         }
     }

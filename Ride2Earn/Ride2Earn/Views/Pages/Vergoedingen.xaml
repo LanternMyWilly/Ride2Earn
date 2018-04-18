@@ -4,7 +4,7 @@
              x:Class="Ride2Earn.Views.Pages.Vergoedingen">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="10,0,10,15">
-            <ListView x:Name="lstRitten">
+            <ListView x:Name="lstRitten" ItemsSource="{Binding Path=Ritten}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Gereden, StringFormat='{0} km'}" Detail="{Binding Datum,StringFormat='Datum: {0:dd/MM/yyyy}'}"/>
