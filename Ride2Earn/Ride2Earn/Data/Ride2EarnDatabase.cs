@@ -36,6 +36,14 @@ namespace Ride2Earn.Data
             }
         }
 
+        public IEnumerable<Rit> GetAantalKM()
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("SELECT sum(Gereden) as Gereden FROM ritten").AsEnumerable();
+            }
+        }
+
         public IEnumerable<Gebruiker> GetGebruiker()
         {
             lock (collisionLock)
@@ -49,6 +57,37 @@ namespace Ride2Earn.Data
             lock (collisionLock)
             {
                 return database.Query<Rit>("SELECT * FROM Ritten").AsEnumerable();
+            }
+        }
+
+        public IEnumerable<Rit> GetDatum(int id)
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("SELECT Datum FROM Ritten where ID=" + id).AsEnumerable();
+            }
+        }
+
+        public IEnumerable<Rit> GetStart(int id)
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("SELECT Start FROM Ritten where ID=" + id).AsEnumerable();
+            }
+        }
+        public IEnumerable<Rit> GetEinde(int id)
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("SELECT Einde FROM Ritten where ID=" + id).AsEnumerable();
+            }
+        }
+
+        public IEnumerable<Rit> GetGereden(int id)
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("SELECT Gereden FROM Ritten where ID=" + id).AsEnumerable();
             }
         }
 

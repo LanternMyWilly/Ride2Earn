@@ -14,17 +14,30 @@ namespace Ride2Earn.Views.Pages
     public partial class Vergoedingen : ContentPage
     {
         private Ride2EarnDatabase dataAccess;
+        private Business bus;
+        private Rit a;
         public Vergoedingen()
         {
             InitializeComponent();
+            bus = new Business();
+            a = new Rit();
+            BindingContext = a;
             dataAccess = new Ride2EarnDatabase();
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            BindingContext = dataAccess;
+            //BindingContext = dataAccess;
+            Aantalkm.Text = Convert.ToString(bus.AantalKM());
             lstRitten.ItemsSource = dataAccess.GetRitten();
+        }
+
+        void ShowDialog(object sender, EventArgs e)
+        {
+            
+            int test = a.ID;
+            DisplayAlert("test",bus.GeredenRit(), "OK");
         }
     }
 }

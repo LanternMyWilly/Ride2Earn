@@ -6,20 +6,33 @@
     <ContentPage.Content>
         <StackLayout x:Name="MasterLayout">
             <Image x:Name="BankCardIcon" Source="Bankcard.png" WidthRequest="120" VerticalOptions="Center"/>
-            <StackLayout Orientation="Vertical" Padding="10,0,10,15">
-                <ListView x:Name="lstRitten" RowHeight="55">
+            <StackLayout Orientation="Vertical" Padding="10,0,10,10">
+                <ListView x:Name="lstRitten" RowHeight="55" ItemSelected="ShowDialog">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <selected:ExtendedViewCell SelectedBackgroundColor="#637775">
                                 <Grid>
                                     <Label x:Name="kilometers" Text="{Binding Gereden, StringFormat='{0} km'}" Grid.Row="0" FontSize="Large"/>
                                     <Label x:Name="Datum" Text="{Binding Datum,StringFormat='Datum: {0:dd/MM/yyyy}'}" Grid.Row="1" FontSize="Micro"/>
+                                    <Label x:Name="ID" Text="{Binding ID}" Grid.Row="1" FontSize="Micro" IsVisible="False" IsEnabled="False"/>
                                 </Grid>
                             </selected:ExtendedViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                
             </StackLayout>
+            <StackLayout Padding="10,0,10,130">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Totaal aantal gereden km: "/>
+                            <Span x:Name="Aantalkm"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
