@@ -62,9 +62,11 @@ namespace Ride2Earn.Data
 
         public IEnumerable<Rit> GetDatum(int id)
         {
+            
             lock (collisionLock)
             {
-                return database.Query<Rit>("SELECT Datum FROM Ritten where ID=" + id).AsEnumerable();
+                id += 1;
+                return database.Query<Rit>("SELECT Datum FROM Ritten where ID = ?", id).AsEnumerable();
             }
         }
 
@@ -72,6 +74,7 @@ namespace Ride2Earn.Data
         {
             lock (collisionLock)
             {
+                id += 1;
                 return database.Query<Rit>("SELECT Start FROM Ritten where ID = ?", id).AsEnumerable();
             }
         }
@@ -79,7 +82,8 @@ namespace Ride2Earn.Data
         {
             lock (collisionLock)
             {
-                return database.Query<Rit>("SELECT Einde FROM Ritten where ID=" + id).AsEnumerable();
+                id += 1;
+                return database.Query<Rit>("SELECT Einde FROM Ritten where ID = ?", id).AsEnumerable();
             }
         }
 
@@ -87,7 +91,16 @@ namespace Ride2Earn.Data
         {
             lock (collisionLock)
             {
-                return database.Query<Rit>("SELECT Gereden FROM Ritten where ID=" + id).AsEnumerable();
+                id += 1;
+                return database.Query<Rit>("SELECT Gereden FROM Ritten where ID = ?", id).AsEnumerable();
+            }
+        }
+
+        public IEnumerable<Rit> CleanTable()
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("delete from Ritten").AsEnumerable();
             }
         }
 

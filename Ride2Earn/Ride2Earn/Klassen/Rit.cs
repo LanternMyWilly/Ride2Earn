@@ -58,13 +58,20 @@ namespace Ride2Earn.Klassen
         {
             return string.Format("Bestemming: {0}", Einde);
         }
+
         public string DatumRit()
         {
             return string.Format("Datum: {0}", Datum.Date.ToString("dd/MM/yyyy"));
         }
+
         public string GeredenRit()
         {
             return string.Format("Aantal km: {0}", Gereden);
+        }
+
+        public string Vergoeding()
+        {
+            return string.Format("{0}", Gereden);
         }
     }
 

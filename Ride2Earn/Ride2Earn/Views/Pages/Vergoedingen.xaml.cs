@@ -27,20 +27,29 @@ namespace Ride2Earn.Views.Pages
             base.OnAppearing();
             BindingContext = dataAccess;
             Aantalkm.Text = Convert.ToString(bus.AantalKM());
+            Vergoeding.Text = bus.TotaleVergoeding();
             lstRitten.ItemsSource = dataAccess.GetRitten();
         }
 
         void ShowEvent(object sender, SelectedItemChangedEventArgs e)
         {
             var i = (lstRitten.ItemsSource as List<Rit>).IndexOf(e.SelectedItem as Rit);
-            for (int teller = 1; teller < 50; teller++)
+            int Test = i;
+            bus = new Business(Test);
+            DisplayAlert("Informatie rit", bus.StartRit() + Environment.NewLine + bus.EindeRit() + Environment.NewLine + bus.DatumRit() + Environment.NewLine + bus.GeredenRit() + Environment.NewLine + Environment.NewLine + bus.VergoedingPerRit(),"OK");
+        }
+
+        async void Betalen(object sender, EventArgs e)
+        {
+            var antwoord = await DisplayAlert("Betaald", "Ben je zeker dat alles is betaald?" + Environment.NewLine + Environment.NewLine + "LET OP: Alle opgeslagen ritten worden verwijderd!", "JA", "NEE");
+            if (antwoord)
             {
-                i += 1;
-                int Test = i;
-                bus = new Business(Test);
+                var A2 = await DisplayAlert("Zeker?", "Ben je zeker?", "OK", "Cancel");
+                if (A2)
+                {
+                    dataAccess.CleanTable();
+                }             
             }
-            
-            DisplayAlert("Hallo", bus.StartRit(), "OK");
         }
     }
 }

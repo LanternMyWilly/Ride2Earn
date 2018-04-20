@@ -82,7 +82,7 @@ namespace Ride2Earn.Klassen
         public string EindeRit()
         {
             string a = string.Empty;
-            foreach (Rit b in _Start)
+            foreach (Rit b in _Einde)
             {
                 a = b.EindeRit();
             }
@@ -92,7 +92,7 @@ namespace Ride2Earn.Klassen
         public string DatumRit()
         {
             string a = string.Empty;
-            foreach (Rit b in _Start)
+            foreach (Rit b in _Datum)
             {
                 a = b.DatumRit();
             }
@@ -102,11 +102,27 @@ namespace Ride2Earn.Klassen
         public string GeredenRit()
         {
             string a = string.Empty;
-            foreach (Rit b in _Start)
+            foreach (Rit b in _Gereden)
             {
                 a = b.GeredenRit();
             }
             return a;
+        }
+
+        public string VergoedingPerRit()
+        {
+            double Vergoeding = 0;
+            string result = string.Empty;
+            string a = string.Empty;
+            foreach (Rit b in _Gereden)
+            {
+                a = b.Vergoeding();
+            }
+            Vergoeding = Convert.ToDouble(a) * 0.15; 
+            Vergoeding = Math.Round(Vergoeding, 2);
+            result = "Vergoeding: " + Vergoeding;
+            return result;
+
         }
 
         public string AantalKM()
@@ -117,6 +133,22 @@ namespace Ride2Earn.Klassen
                 a = b.Kilometer();
             }
             return a;
+        }
+
+        public string TotaleVergoeding()
+        {
+            string Vergoeding = string.Empty;
+            double totaal = 0;
+            string a = string.Empty;
+            foreach (Rit b in KM)
+            {
+                a = b.Vergoeding();
+            }
+
+            totaal = Convert.ToDouble(a) * 0.15;
+            totaal = Math.Round(totaal, 2);
+            Vergoeding = "Totale vergoeding: €" + totaal;
+            return Vergoeding;
         }
 
         public bool Vergelijken(string ww)
