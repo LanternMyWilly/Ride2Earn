@@ -72,7 +72,7 @@ namespace Ride2Earn.Data
         {
             lock (collisionLock)
             {
-                return database.Query<Rit>("SELECT Start FROM Ritten where ID=" + id).AsEnumerable();
+                return database.Query<Rit>("SELECT Start FROM Ritten where ID = ?", id).AsEnumerable();
             }
         }
         public IEnumerable<Rit> GetEinde(int id)

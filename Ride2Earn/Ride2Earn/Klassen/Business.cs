@@ -62,6 +62,7 @@ namespace Ride2Earn.Klassen
 
         public Business(int id)
         {
+            _db = new Ride2EarnDatabase();
             _Start = _db.GetStart(id);
             _Einde = _db.GetEinde(id);
             _Datum = _db.GetDatum(id);

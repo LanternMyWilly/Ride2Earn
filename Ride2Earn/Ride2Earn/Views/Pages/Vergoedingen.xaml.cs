@@ -15,29 +15,32 @@ namespace Ride2Earn.Views.Pages
     {
         private Ride2EarnDatabase dataAccess;
         private Business bus;
-        private Rit a;
         public Vergoedingen()
         {
             InitializeComponent();
             bus = new Business();
-            a = new Rit();
-            BindingContext = a;
             dataAccess = new Ride2EarnDatabase();
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //BindingContext = dataAccess;
+            BindingContext = dataAccess;
             Aantalkm.Text = Convert.ToString(bus.AantalKM());
             lstRitten.ItemsSource = dataAccess.GetRitten();
         }
 
-        void ShowDialog(object sender, EventArgs e)
+        void ShowEvent(object sender, SelectedItemChangedEventArgs e)
         {
+            var i = (lstRitten.ItemsSource as List<Rit>).IndexOf(e.SelectedItem as Rit);
+            for (int teller = 1; teller < 50; teller++)
+            {
+                i += 1;
+                int Test = i;
+                bus = new Business(Test);
+            }
             
-            int test = a.ID;
-            DisplayAlert("test",bus.GeredenRit(), "OK");
+            DisplayAlert("Hallo", bus.StartRit(), "OK");
         }
     }
 }
