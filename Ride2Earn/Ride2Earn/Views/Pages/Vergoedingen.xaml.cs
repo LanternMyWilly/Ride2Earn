@@ -47,7 +47,11 @@ namespace Ride2Earn.Views.Pages
                 var A2 = await DisplayAlert("Zeker?", "Ben je zeker?", "OK", "Cancel");
                 if (A2)
                 {
-                    dataAccess.CleanTable();
+                    dataAccess.droptable();
+                    dataAccess.createtable();
+                    Aantalkm.Text = Convert.ToString(bus.AantalKM());
+                    Vergoeding.Text = bus.TotaleVergoeding();
+                    lstRitten.ItemsSource = dataAccess.GetRitten();
                 }             
             }
         }

@@ -85,7 +85,6 @@
                                     <local:ICustomLabelRenderer 
                                     x:Name="lblRknNummer" CornerRadius="18" 
                                     IsCurvedCornersEnabled="True" 
-                                    Grid.Column="0"
                                     Grid.Row="4"
                                     Text="{Binding RknNummer}" 
                                     VerticalTextAlignment="Center"/>

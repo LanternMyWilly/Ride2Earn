@@ -104,6 +104,32 @@ namespace Ride2Earn.Data
             }
         }
 
+        public void droptable()
+        {
+            lock(collisionLock)
+            {
+                database.DropTable<Rit>();
+            }
+            
+        }
+
+        public void createtable()
+        {
+            lock(collisionLock)
+            {
+                database.CreateTable<Rit>();
+            }
+            
+        }
+
+        public IEnumerable<Rit> DropID()
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Rit>("DBCC CHECKIDENT('Ritten', RESEED, 0)").AsEnumerable();
+            }
+        }
+
         public int SaveGebruikerAsync(Gebruiker a)
         {
             lock(collisionLock)

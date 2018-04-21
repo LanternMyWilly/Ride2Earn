@@ -39,6 +39,7 @@ namespace Ride2Earn.Views.Register
             Entry_Straat.FontSize = 15.5;
             Entry_rknNummer.FontSize = 15.5;
             Entry_Nummer.Text = string.Empty;
+            Entry_Postcode.Text = string.Empty;
 
             Entry_Straat.Completed += (s, e) => Entry_Nummer.Focus();
             Entry_Nummer.Completed += (s, e) => Entry_Postcode.Focus();

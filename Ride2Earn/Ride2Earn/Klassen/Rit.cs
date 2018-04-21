@@ -69,6 +69,10 @@ namespace Ride2Earn.Klassen
             return string.Format("Aantal km: {0}", Gereden);
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0}", Gereden);
+        }
         public string Vergoeding()
         {
             return string.Format("{0}", Gereden);

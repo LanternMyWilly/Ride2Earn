@@ -43,7 +43,6 @@
                     TextColor="#e8e8e8"
                     Text="Betaald?"/>
             </StackLayout>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

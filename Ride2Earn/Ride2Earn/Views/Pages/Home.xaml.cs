@@ -30,16 +30,27 @@ namespace Ride2Earn.Views.Pages
 
         void AddEvent(object sender, EventArgs e)
         {
+            DateTime date;
+            double value = 0;
             var rit = (Rit)BindingContext;
             if (EntryDatum.Text != string.Empty && EntryEinde.Text != string.Empty && EntryStart.Text != string.Empty && EntryGereden.Text != string.Empty)
-            {
-                dataAccess.SaveRit(rit);
-                Navigation.PopAsync();
-                EntryDatum.Text = string.Empty;
-                EntryEinde.Text = string.Empty;
-                EntryGereden.Text = string.Empty;
-                EntryStart.Text = string.Empty;
-                DisplayAlert("Succesvol", "Rit succesvol opgeslagen.", "OK");
+            {   
+                if ((DateTime.TryParse(EntryDatum.Text, out date)) && (double.TryParse(EntryGereden.Text, out value)))
+                {
+                    dataAccess.SaveRit(rit);
+                    DisplayAlert("Succesvol", "Rit succesvol opgeslagen.", "OK");
+                    Navigation.InsertPageBefore(new Home(), this);
+                    Navigation.PopAsync();
+                }
+                else
+                {
+                    DisplayAlert("Fout ingave", "Gelieve elk veld correct in te vullen. (volgens het voorbeeld)", "OK");
+                    EntryDatum.Text = string.Empty;
+                    EntryStart.Text = string.Empty;
+                    EntryEinde.Text = string.Empty;
+                    EntryGereden.Text = string.Empty;
+                }
+                
             }
             else
             {
