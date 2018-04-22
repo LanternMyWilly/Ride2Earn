@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride2Earn.Views.Dialogs.InformatieDialog">
+    <ContentView.Content>
+        <StackLayout
+            Padding="10"
+            BackgroundColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="5"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                x:Name="TitleLabel"
+                FontSize="Medium"
+                Text="Enter the value:" />
+            <Label
+                x:Name="InfoLabel"
+                FontSize="Medium"
+                Text="Enter the value:" />
+            <Button
+                x:Name="CloseButton"
+                BackgroundColor="DodgerBlue"
+                Text="Ok"
+                TextColor="White">
+                <Button.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="40" />
+                        <On Platform="iOS" Value="30" />
+                        <On Platform="Windows" Value="35" />
+                    </OnPlatform>
+                </Button.HeightRequest>
+            </Button>
+        </StackLayout>
+    </ContentView.Content>
+</ContentPage>

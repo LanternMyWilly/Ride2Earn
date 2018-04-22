@@ -53,8 +53,7 @@ namespace Ride2Earn.Views.Pages
                     EntryStart.Text = string.Empty;
                     EntryEinde.Text = string.Empty;
                     EntryGereden.Text = string.Empty;
-                }
-                
+                }               
             }
             else
             {
