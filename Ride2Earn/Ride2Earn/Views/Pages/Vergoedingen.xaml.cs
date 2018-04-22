@@ -44,14 +44,15 @@ namespace Ride2Earn.Views.Pages
             var antwoord = await DisplayAlert("Betaald", "Ben je zeker dat alles is betaald?" + Environment.NewLine + Environment.NewLine + "LET OP: Alle opgeslagen ritten worden verwijderd!", "JA", "NEE");
             if (antwoord)
             {
+                Vergoeding.Text = string.Empty;
+                Aantalkm.Text = string.Empty;
                 var A2 = await DisplayAlert("Zeker?", "Ben je zeker?", "OK", "Cancel");
                 if (A2)
                 {
                     dataAccess.droptable();
                     dataAccess.createtable();
-                    Aantalkm.Text = Convert.ToString(bus.AantalKM());
-                    Vergoeding.Text = bus.TotaleVergoeding();
-                    lstRitten.ItemsSource = dataAccess.GetRitten();
+                    Navigation.InsertPageBefore(new Vergoedingen(), this);
+                    await Navigation.PopAsync();
                 }             
             }
         }

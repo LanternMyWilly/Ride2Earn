@@ -23,9 +23,18 @@ namespace Ride2Earn.Views.Pages
 
         async void Update(object sender, EventArgs e)
         {
+            double value;
             var aanpasen = (Gebruiker)BindingContext;
-            dataAccess.SaveGebruikerAsync(aanpasen);
-            await Navigation.PopAsync();
+            if ((double.TryParse(EntryNummer.Text, out value)) && (double.TryParse(EntryPcode.Text, out value)))
+            {
+                dataAccess.SaveGebruikerAsync(aanpasen);
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Fout ingave", "Gelieve een cijfer in te vullen bij nummer en/of postcode","OK");
+            }
+            
         }
     }
 }

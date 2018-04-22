@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.Ride2Earn">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="2.1" package="com.LanternMyWilly.Ride2Earn" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="Ride2Earn.Android"></application>
+	<application android:label="Ride2Earn" android:icon="@drawable/Logo2"></application>
 </manifest>

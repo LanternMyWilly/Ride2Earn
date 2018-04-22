@@ -25,7 +25,11 @@ namespace Ride2Earn.Views.Pages
             dataAccess = new Ride2EarnDatabase();
             EntryGereden.Text = string.Empty;
             EntryDatum.Text = string.Empty;
-            
+            EntryDatum.Completed += (s, e) => EntryStart.Focus();
+            EntryStart.Completed += (s, e) => EntryEinde.Focus();
+            EntryEinde.Completed += (s, e) => EntryGereden.Focus();
+            EntryGereden.Completed += (s, e) => AddEvent(s, e);
+
         }
 
         void AddEvent(object sender, EventArgs e)

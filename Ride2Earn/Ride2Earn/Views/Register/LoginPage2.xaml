@@ -50,7 +50,7 @@
                 </local:ICustomEntryRenderer>
                 <local:ICustomEntryRenderer
                     x:Name="Entry_Postcode"
-                    Text="{Binding Postcode}"
+                    Text="{Binding Pcode}"
                     Placeholder="Postcode"
                     CurvedBackgroundColor="#92afac"
                     IsCurvedCornersEnabled="True"
