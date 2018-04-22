@@ -41,9 +41,9 @@ namespace Ride2Earn.Views.Menu
         {
 
             var item = (MasterMenuItem)e.SelectedItem;
-            Type page = item.TargetType;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-            IsPresented = false;
+                Type page = item.TargetType;
+                Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+                IsPresented = false;            
         }
     }
 }

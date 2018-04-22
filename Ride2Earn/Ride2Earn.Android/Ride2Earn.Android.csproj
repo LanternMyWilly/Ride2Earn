@@ -37,6 +37,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -214,6 +217,7 @@
   <ItemGroup>
     <Compile Include="CustomLabelRenderer.cs" />
     <Compile Include="CustomRenderer\CustomEntryRenderer.cs" />
+    <Compile Include="CustomRenderer\CustomListviewRenderer.cs" />
     <Compile Include="CustomRenderer\ExtendedViewCellRenderer.cs" />
     <Compile Include="CustomRenderer\FirstButtonRenderer.cs" />
     <Compile Include="CustomRenderer\FirstLabelRenderer.cs" />

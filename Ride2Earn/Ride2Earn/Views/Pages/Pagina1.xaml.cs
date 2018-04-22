@@ -23,6 +23,7 @@ namespace Ride2Earn.Views.Pages
         {
             InitializeComponent();
             bus = new Business();
+            lstGebruiker.IsEnabled = false;
             dataAccess = new Ride2EarnDatabase();
         }
 

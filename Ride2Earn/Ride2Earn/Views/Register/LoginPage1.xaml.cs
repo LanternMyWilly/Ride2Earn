@@ -19,6 +19,7 @@ namespace Ride2Earn.Views.Register
         {
             InitializeComponent();
             BindingContext = new Gebruiker();
+            NavigationPage.SetHasNavigationBar(this, false);
             Init();
         }
 
@@ -27,6 +28,11 @@ namespace Ride2Earn.Views.Register
             btnNext.BackgroundColor = Constants.BackgroundTextColor;
             btnNext.TextColor = Constants.MainTextColor;
             LoginIcon.HeightRequest = Constants.LoginIconHeight;
+
+            Entry_Email.Text = string.Empty;
+            Entry_Familienaam.Text = string.Empty;
+            Entry_Password.Text = string.Empty;
+            Entry_Voornaam.Text = string.Empty;
 
             Entry_Password.FontSize = 15.5;
             Entry_Email.FontSize = 15.5;
@@ -41,8 +47,15 @@ namespace Ride2Earn.Views.Register
 
         void NextProcedure(object sender, EventArgs e)
         {
-            var a = (Gebruiker)BindingContext;
-            Application.Current.MainPage = new NavigationPage(new LoginPage2(a));
+            if (Entry_Email.Text == string.Empty || Entry_Familienaam.Text == string.Empty || Entry_Password.Text == string.Empty || Entry_Voornaam.Text == string.Empty)
+            {
+                DisplayAlert("Mislukt", "Gelieve alle velden correct in te vullen.", "OK");
+            }
+            else
+            {
+                var a = (Gebruiker)BindingContext;
+                Application.Current.MainPage = new NavigationPage(new LoginPage2(a));
+            }
         }
     }
 }

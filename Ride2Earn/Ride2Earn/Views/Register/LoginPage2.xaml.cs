@@ -50,10 +50,26 @@ namespace Ride2Earn.Views.Register
 
         void RegisterEvent(object sender, EventArgs e)
         {
+            double value;
             var gebruiker = (Gebruiker)BindingContext;
-            dataAccess.SaveGebruikerAsync(gebruiker);
-            Navigation.PopAsync();
-            Application.Current.MainPage = new NavigationPage(new MasterDetail());
+
+            if ((Entry_Gemeente.Text != string.Empty) && (Entry_Nummer.Text != string.Empty) && (Entry_Postcode.Text != string.Empty) && (Entry_Straat.Text != string.Empty) && (Entry_rknNummer.Text != string.Empty))
+            {
+                if ((double.TryParse(Entry_Nummer.Text, out value)) && (double.TryParse(Entry_Postcode.Text, out value)))
+                {
+                    dataAccess.SaveGebruikerAsync(gebruiker);
+                    Navigation.PopAsync();
+                    Application.Current.MainPage = new NavigationPage(new MasterDetail());
+                }
+                else
+                {
+                    DisplayAlert("Fout ingave", "Gelieve een cijfer in te vullen bij nummer en/of postcode", "OK");
+                }
+            }
+            else
+            {
+                DisplayAlert("Mislukt", "Gelieve alle velden correct in te vullen.", "OK");
+            }           
         }
     }
 }
