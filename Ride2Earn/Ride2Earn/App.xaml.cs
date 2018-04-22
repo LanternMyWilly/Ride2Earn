@@ -15,31 +15,11 @@ namespace Ride2Earn
 {
     public partial class App : Application
     {
-        public string IsFirstTime
-        {
-            get { return Settings.GeneralSettings; }
-            set
-            {
-                if (Settings.GeneralSettings == value)
-                    return;
-                Settings.GeneralSettings = value;
-            }
-        }
-
         public App()
         {
             InitializeComponent();
 
-            if (IsFirstTime == "yes")
-            {
-
-                MainPage = new LoginPage1();
-                IsFirstTime = "no";
-            }
-            else
-            {
-                MainPage = new MasterDetail();
-            }
+            MainPage = new SplashPage();
 
         }
 
