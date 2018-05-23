@@ -22,8 +22,8 @@
                     TextColor="#637775">
                 </local:ICustomEntryRenderer>
                 <RelativeLayout>
-                    <Label Text="Start adres:" FontSize="Micro" x:Name="startlabel"/>
-                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,15,0,0">
+                    <Label Text="Vertrek adres:" FontSize="Small" x:Name="startlabel"/>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,20,0,0" x:Name="Situatie1">
                         <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
                             <local:CurvedCornersButton 
                                 x:Name="btnStartNieuw"
@@ -36,29 +36,56 @@
                         <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
                             <local:CurvedCornersButton 
                                 x:Name="btnStartBestaand"
+                                Clicked="NieuwBestaand"
                                 CurvedBackgroundColor="#637775"
                                 CurvedCornerRadius="18"
                                 TextColor="#e8e8e8"
                                 Text="Bestaand"/>
                         </StackLayout>
                     </StackLayout>
-                    <local:ICustomEntryRenderer
-                    Text="{Binding Start}"
-                    x:Name="EntryStart"
-                    IsVisible="False"
-                    Placeholder="Vertrek (adres)"
-                    CornerRadius="18"
-                    WidthRequest="340"
-                    IsCurvedCornersEnabled="True"
-                    BorderColor="#637775"
-                    HorizontalTextAlignment="Start"
-                    PlaceholderColor="#637775"
-                    TextColor="#637775">
-                    </local:ICustomEntryRenderer>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,20,0,0" x:Name="Situatie2" IsVisible="False">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Picker x:Name="StartPicker" Title="Selecteer vertrek adres" SelectedIndexChanged="SelectStart"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnStartNieuw1"
+                                Clicked="NieuwStart1"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Nieuw"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,20,0,0" x:Name="Situatie3" IsVisible="False">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:ICustomEntryRenderer
+                                Text="{Binding Start}"
+                                x:Name="EntryStart"
+                                Placeholder="Vertrek (adres)"
+                                CornerRadius="18"
+                                WidthRequest="240"
+                                IsCurvedCornersEnabled="True"
+                                BorderColor="#637775"
+                                HorizontalTextAlignment="Start"
+                                PlaceholderColor="#637775"
+                                TextColor="#637775">
+                            </local:ICustomEntryRenderer>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnStartBestaand1"
+                                Clicked="NieuwBestaand1"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Bestaand"/>
+                        </StackLayout>
+                    </StackLayout>
                 </RelativeLayout>
                 <RelativeLayout>
-                    <Label Text="Eind adres:" FontSize="Micro" x:Name="EindLabel"/>
-                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,15,0,0">
+                    <Label Text="Bestemmings adres:" FontSize="Small" x:Name="EindLabel"/>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,20,0,0" x:Name="Situatie4">
                         <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
                             <local:CurvedCornersButton 
                                 x:Name="btnEindNieuw"
@@ -71,25 +98,52 @@
                         <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
                             <local:CurvedCornersButton 
                                 x:Name="btnEindBestaand"
+                                Clicked="EindBestaand"
                                 CurvedBackgroundColor="#637775"
                                 CurvedCornerRadius="18"
                                 TextColor="#e8e8e8"
                                 Text="Bestaand"/>
                         </StackLayout>
                     </StackLayout>
-                    <local:ICustomEntryRenderer
-                    Text="{Binding Einde}"
-                    x:Name="EntryEinde"
-                    Placeholder="Aankomst (adres)"
-                    CornerRadius="18"
-                    IsVisible="False"
-                    WidthRequest="340"
-                    IsCurvedCornersEnabled="True"
-                    BorderColor="#637775"
-                    HorizontalTextAlignment="Start"
-                    PlaceholderColor="#637775"
-                    TextColor="#637775">
-                    </local:ICustomEntryRenderer>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,20,0,0" x:Name="Situatie5" IsVisible="False">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Picker x:Name="EindePicker" Title="Selecteer aankomst adres" SelectedIndexChanged="SelectEinde"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnEindNieuw1"
+                                Clicked="NieuwEind1"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Nieuw"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,20,0,0" x:Name="Situatie6" IsVisible="False">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:ICustomEntryRenderer
+                                Text="{Binding Einde}"
+                                x:Name="EntryEinde"
+                                Placeholder="Bestemming (adres)"
+                                CornerRadius="18"
+                                IsCurvedCornersEnabled="True"
+                                BorderColor="#637775"
+                                HorizontalTextAlignment="Start"
+                                PlaceholderColor="#637775"
+                                TextColor="#637775">
+                            </local:ICustomEntryRenderer>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnEindBestaand1"
+                                Clicked="EindBestaand1"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Bestaand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
                 </RelativeLayout>
 
                 <local:ICustomEntryRenderer
@@ -103,7 +157,7 @@
                     PlaceholderColor="#637775"
                     TextColor="#637775">
                     </local:ICustomEntryRenderer>
-                
+
                 <local:CurvedCornersButton 
                     x:Name="btnBevestigen"
                     Clicked="AddEvent"

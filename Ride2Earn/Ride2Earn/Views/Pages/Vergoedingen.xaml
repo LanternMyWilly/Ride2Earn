@@ -32,6 +32,7 @@
                     </Label.FormattedText>
                 </Label>
                 <Label x:Name="Vergoeding" FontAttributes="Bold"/>
+                <Label x:Name="testlabel"/>
                 
             </StackLayout>
             <StackLayout Padding="10,0,10,30">

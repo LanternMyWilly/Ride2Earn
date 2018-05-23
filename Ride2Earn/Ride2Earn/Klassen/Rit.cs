@@ -73,10 +73,22 @@ namespace Ride2Earn.Klassen
         {
             return string.Format("{0}", Gereden);
         }
+
         public string Vergoeding()
         {
             return string.Format("{0}", Gereden);
         }
+
+        public string StartAdressen()
+        {
+            return string.Format("{0}", Start);
+        }
+
+        public string EindAdressen()
+        {
+            return string.Format("{0}", Einde);
+        }
+
     }
 
 }

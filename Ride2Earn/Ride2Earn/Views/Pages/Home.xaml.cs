@@ -16,20 +16,40 @@ namespace Ride2Earn.Views.Pages
     public partial class Home : ContentPage
     {
         private Ride2EarnDatabase dataAccess;
+        private Business bus;
         public Home()
         {
             InitializeComponent();
-            EntryGereden.Text = string.Empty;
-            EntryDatum.Text = string.Empty;
-            BindingContext = new Rit();
-            dataAccess = new Ride2EarnDatabase();
-            EntryGereden.Text = string.Empty;
-            EntryDatum.Text = string.Empty;
-            EntryDatum.Completed += (s, e) => EntryStart.Focus();
-            EntryStart.Completed += (s, e) => EntryEinde.Focus();
-            EntryEinde.Completed += (s, e) => EntryGereden.Focus();
-            EntryGereden.Completed += (s, e) => AddEvent(s, e);
 
+            bus = new Business();
+            dataAccess = new Ride2EarnDatabase();
+            BindingContext = new Rit();
+
+            StartPicker.ItemsSource = bus.GetStartAdressen();
+            EindePicker.ItemsSource = bus.GetEindAdressen();
+
+            EntryGereden.Text = string.Empty;
+            EntryDatum.Text = string.Empty;        
+            EntryStart.Text = string.Empty;
+            EntryEinde.Text = string.Empty;
+
+            if ((EntryStart.IsVisible == false) && (EntryEinde.IsVisible == false))
+            {
+                EntryDatum.Completed += (s, e) => EntryGereden.Focus();
+                EntryGereden.Completed += (s, e) => AddEvent(s, e);
+            }
+            else if (EntryStart.IsVisible == false)
+            {
+                EntryDatum.Completed += (s, e) => EntryEinde.Focus();
+                EntryEinde.Completed += (s, e) => EntryGereden.Focus();
+                EntryGereden.Completed += (s, e) => AddEvent(s, e);
+            }
+            else if (EntryEinde.IsVisible == false)
+            {
+                EntryDatum.Completed += (s, e) => EntryStart.Focus();
+                EntryStart.Completed += (s, e) => EntryGereden.Focus();
+                EntryGereden.Completed += (s, e) => AddEvent(s, e);
+            }
         }
 
         void AddEvent(object sender, EventArgs e)
@@ -37,6 +57,10 @@ namespace Ride2Earn.Views.Pages
             DateTime date;
             double value = 0;
             var rit = (Rit)BindingContext;
+
+            
+            
+
             if (EntryDatum.Text != string.Empty && EntryEinde.Text != string.Empty && EntryStart.Text != string.Empty && EntryGereden.Text != string.Empty)
             {
                 if ((DateTime.TryParse(EntryDatum.Text, out date)) && (double.TryParse(EntryGereden.Text, out value)))
@@ -63,17 +87,101 @@ namespace Ride2Earn.Views.Pages
 
         void NieuwStart(object sender, EventArgs e)
         {
-            startlabel.IsVisible = false;
+            /*startlabel.IsVisible = false;
             btnStartBestaand.IsVisible = false;
             btnStartNieuw.IsVisible = false;
-            EntryStart.IsVisible = true;
+            EntryStart.IsVisible = true;*/
+            Situatie3.IsVisible = true;
+            Situatie1.IsVisible = false;
+        }
+
+        void NieuwStart1(object sender, EventArgs e)
+        {
+            /*StartPicker.IsVisible = false;
+            btnStartNieuw1.IsVisible = false;
+            EntryStart.IsVisible = true;*/
+            Situatie2.IsVisible = false;
+            Situatie3.IsVisible = true;
         }
 
         void NieuwEind(object sender, EventArgs e)
         {
-            EindLabel.IsVisible = false;
+            /*EindLabel.IsVisible = false;
             btnEindBestaand.IsVisible = false;
             btnEindNieuw.IsVisible = false;
+            EntryEinde.IsVisible = true;*/
+            Situatie4.IsVisible = false;
+            Situatie6.IsVisible = true;
+        }
+        
+
+        void NieuwEind1(object sender, EventArgs e)
+        {
+            /*EindePicker.IsVisible = false;
+            btnEindNieuw1.IsVisible = false;
+            EntryEinde.IsVisible = true;*/
+            Situatie5.IsVisible = false;
+            Situatie6.IsVisible = true;
+        }
+
+        void NieuwBestaand1(object sender, EventArgs e)
+        {
+            /*EntryStart.IsVisible = false;
+            btnStartBestaand1.IsVisible = false;*/
+            Situatie3.IsVisible = false;
+            Situatie2.IsVisible = true;
+
+        }
+
+        void NieuwBestaand(object sender, EventArgs e)
+        {
+            /*startlabel.IsVisible = false;
+            btnStartBestaand.IsVisible = false;
+            btnStartNieuw.IsVisible = false;
+            StartPicker.IsVisible = true;
+            btnStartNieuw1.IsVisible = true;*/
+            Situatie1.IsVisible = false;
+            Situatie3.IsVisible = true;
+        }
+
+        void EindBestaand(object sender, EventArgs e)
+        {
+            /*EindLabel.IsVisible = false;
+            btnEindBestaand.IsVisible = false;
+            btnEindNieuw.IsVisible = false;
+            EindePicker.IsVisible = true;
+            btnEindNieuw1.IsVisible = true;*/
+            Situatie4.IsVisible = false;
+            Situatie5.IsVisible = true;
+        }
+
+        void EindBestaand1(object sender, EventArgs e)
+        {
+            /*EindLabel.IsVisible = false;
+            btnEindBestaand.IsVisible = false;
+            btnEindNieuw.IsVisible = false;
+            EindePicker.IsVisible = true;
+            btnEindNieuw1.IsVisible = true;*/
+            Situatie6.IsVisible = false;
+            Situatie5.IsVisible = true;
+        }
+
+        void SelectStart(object sender, EventArgs e)
+        {
+            if (StartPicker.SelectedItem != null)
+            {
+                EntryStart.Text = Convert.ToString(StartPicker.SelectedItem);
+                StartPicker.IsVisible = false;
+                btnStartNieuw1.IsVisible = false;
+                EntryStart.IsVisible = true;
+            }
+        }
+
+        void SelectEinde(object sender, EventArgs e)
+        {
+            EntryEinde.Text = Convert.ToString(EindePicker.SelectedItem);
+            EindePicker.IsVisible = false;
+            btnEindNieuw1.IsVisible = false;
             EntryEinde.IsVisible = true;
         }
     }

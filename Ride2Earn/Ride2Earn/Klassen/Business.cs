@@ -10,12 +10,26 @@ namespace Ride2Earn.Klassen
     class Business
     {
         private Ride2EarnDatabase _db;
+        private IEnumerable<Rit> _GetStartAdressen;
+        private IEnumerable<Rit> _GetEindeAdressen;
         private IEnumerable<Gebruiker> _Wachtwoord;
         private IEnumerable<Rit> _Km;
         private IEnumerable<Rit> _Start;
         private IEnumerable<Rit> _Einde;
         private IEnumerable<Rit> _Datum;
         private IEnumerable<Rit> _Gereden;
+
+        public IEnumerable<Rit> StartAdressen
+        {
+            get { return _GetStartAdressen; }
+            set { _GetStartAdressen = value; }
+        }
+
+        public IEnumerable<Rit> EindAdressen
+        {
+            get { return _GetEindeAdressen; }
+            set { _GetEindeAdressen = value; }
+        }
 
         public IEnumerable<Gebruiker> Wachtwoorden
         {
@@ -58,6 +72,8 @@ namespace Ride2Earn.Klassen
             _db = new Ride2EarnDatabase();
             _Wachtwoord = _db.GetWW();
             _Km = _db.GetAantalKM();
+            _GetStartAdressen = _db.GetStartAdressen();
+            _GetEindeAdressen = _db.GetEindAdressen();
         }
 
         public Business(int id)
@@ -67,6 +83,26 @@ namespace Ride2Earn.Klassen
             _Einde = _db.GetEinde(id);
             _Datum = _db.GetDatum(id);
             _Gereden = _db.GetGereden(id);
+        }
+
+        public List<string> GetStartAdressen()
+        {
+            List<string> a = new List<string>();
+            foreach (Rit b in _GetStartAdressen)
+            {
+                a.Add(b.StartAdressen());
+            }
+            return a;
+        }
+
+        public List<string> GetEindAdressen()
+        {
+            List<string> a = new List<string>();
+            foreach (Rit b in _GetEindeAdressen)
+            {
+                a.Add(b.EindAdressen());
+            }
+            return a;
         }
 
         public string StartRit()

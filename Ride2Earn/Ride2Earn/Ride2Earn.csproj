@@ -48,9 +48,7 @@
     <Compile Include="ICustomLabelRenderer.cs" />
     <Compile Include="ICustomListviewRenderer.cs" />
     <Compile Include="Klassen\Business.cs" />
-    <Compile Include="Klassen\EindAdres.cs" />
     <Compile Include="Klassen\Rit.cs" />
-    <Compile Include="Klassen\StartAdres.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
