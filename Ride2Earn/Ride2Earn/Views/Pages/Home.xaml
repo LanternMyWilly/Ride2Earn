@@ -8,13 +8,7 @@
         <StackLayout x:Name="MasterLayout">
             <Image x:Name="LoginIcon" Source="KM.png" WidthRequest="140" VerticalOptions="Center"/>
 
-            <StackLayout x:Name="EntriesStack" VerticalOptions="CenterAndExpand">
-                <StackLayout.Padding>
-                    <OnIdiom x:TypeArguments="Thickness">
-                        <OnIdiom.Phone>20,10,20,0</OnIdiom.Phone>
-                        <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
-                    </OnIdiom>
-                </StackLayout.Padding>
+            <StackLayout x:Name="EntriesStack" Padding="10,30,10,30">
 
                 <local:ICustomEntryRenderer
                     Text="{Binding Datum}"
@@ -27,32 +21,78 @@
                     PlaceholderColor="#637775"
                     TextColor="#637775">
                 </local:ICustomEntryRenderer>
-
-                <local:ICustomEntryRenderer
+                <RelativeLayout>
+                    <Label Text="Start adres:" FontSize="Micro" x:Name="startlabel"/>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,15,0,0">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnStartNieuw"
+                                Clicked="NieuwStart"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Nieuw"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnStartBestaand"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Bestaand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <local:ICustomEntryRenderer
                     Text="{Binding Start}"
                     x:Name="EntryStart"
+                    IsVisible="False"
                     Placeholder="Vertrek (adres)"
                     CornerRadius="18"
-                    IsCurvedCornersEnabled="True"
-                    BorderColor="#637775"
-                    HorizontalTextAlignment="Start"
-                    PlaceholderColor="#637775"
-                    TextColor="#637775">
-                </local:ICustomEntryRenderer>
-
-                    <local:ICustomEntryRenderer
-                    Text="{Binding Einde}"
-                    x:Name="EntryEinde"
-                    Placeholder="Aankomst (adres)"
-                    CornerRadius="18"
+                    WidthRequest="340"
                     IsCurvedCornersEnabled="True"
                     BorderColor="#637775"
                     HorizontalTextAlignment="Start"
                     PlaceholderColor="#637775"
                     TextColor="#637775">
                     </local:ICustomEntryRenderer>
-
+                </RelativeLayout>
+                <RelativeLayout>
+                    <Label Text="Eind adres:" FontSize="Micro" x:Name="EindLabel"/>
+                    <StackLayout Orientation="Horizontal" WidthRequest="340" Padding="0,15,0,0">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnEindNieuw"
+                                Clicked="NieuwEind"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Nieuw"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <local:CurvedCornersButton 
+                                x:Name="btnEindBestaand"
+                                CurvedBackgroundColor="#637775"
+                                CurvedCornerRadius="18"
+                                TextColor="#e8e8e8"
+                                Text="Bestaand"/>
+                        </StackLayout>
+                    </StackLayout>
                     <local:ICustomEntryRenderer
+                    Text="{Binding Einde}"
+                    x:Name="EntryEinde"
+                    Placeholder="Aankomst (adres)"
+                    CornerRadius="18"
+                    IsVisible="False"
+                    WidthRequest="340"
+                    IsCurvedCornersEnabled="True"
+                    BorderColor="#637775"
+                    HorizontalTextAlignment="Start"
+                    PlaceholderColor="#637775"
+                    TextColor="#637775">
+                    </local:ICustomEntryRenderer>
+                </RelativeLayout>
+
+                <local:ICustomEntryRenderer
                     Text="{Binding Gereden}"
                     x:Name="EntryGereden"
                     Placeholder="Aantal km"
@@ -71,7 +111,7 @@
                     CurvedCornerRadius="18"
                     TextColor="#e8e8e8"
                     Text="Toevoegen"
-                    Margin="0,25,0,0"/>
+                    Margin="0,30,0,0"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

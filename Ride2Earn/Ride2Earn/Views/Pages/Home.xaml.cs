@@ -38,7 +38,7 @@ namespace Ride2Earn.Views.Pages
             double value = 0;
             var rit = (Rit)BindingContext;
             if (EntryDatum.Text != string.Empty && EntryEinde.Text != string.Empty && EntryStart.Text != string.Empty && EntryGereden.Text != string.Empty)
-            {   
+            {
                 if ((DateTime.TryParse(EntryDatum.Text, out date)) && (double.TryParse(EntryGereden.Text, out value)))
                 {
                     dataAccess.SaveRit(rit);
@@ -53,12 +53,28 @@ namespace Ride2Earn.Views.Pages
                     EntryStart.Text = string.Empty;
                     EntryEinde.Text = string.Empty;
                     EntryGereden.Text = string.Empty;
-                }               
+                }
             }
             else
             {
                 DisplayAlert("Mislukt", "Gelieve alle velden correct in te vullen.", "OK");
-            }           
+            }
+        }
+
+        void NieuwStart(object sender, EventArgs e)
+        {
+            startlabel.IsVisible = false;
+            btnStartBestaand.IsVisible = false;
+            btnStartNieuw.IsVisible = false;
+            EntryStart.IsVisible = true;
+        }
+
+        void NieuwEind(object sender, EventArgs e)
+        {
+            EindLabel.IsVisible = false;
+            btnEindBestaand.IsVisible = false;
+            btnEindNieuw.IsVisible = false;
+            EntryEinde.IsVisible = true;
         }
     }
 }

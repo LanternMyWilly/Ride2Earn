@@ -51,9 +51,9 @@ namespace Ride2Earn
         {
             base.OnAppearing();
 
-            await splashImage.ScaleTo(1, 2000); //Time-consuming processes such as initialization
+            await splashImage.ScaleTo(1, 200); //Time-consuming processes such as initialization
             await splashImage.ScaleTo(0.9, 1500, Easing.Linear);
-            await splashImage.ScaleTo(150, 1200, Easing.Linear);
+            await splashImage.ScaleTo(1500, 1, Easing.Linear);
             if (IsFirstTime == "yes")
             {
 
