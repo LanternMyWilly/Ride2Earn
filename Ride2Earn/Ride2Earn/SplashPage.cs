@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ride2Earn.Data;
 using Ride2Earn.Helpers;
+using Ride2Earn.Klassen;
 using Ride2Earn.Views.Menu;
 using Ride2Earn.Views.Register;
 using Xamarin.Forms;
@@ -49,6 +51,8 @@ namespace Ride2Earn
 
         protected override async void OnAppearing()
         {
+            Business bus = new Business();
+            Ride2EarnDatabase db = new Ride2EarnDatabase();
             base.OnAppearing();
 
             await splashImage.ScaleTo(1, 200); //Time-consuming processes such as initialization
@@ -56,13 +60,20 @@ namespace Ride2Earn
             await splashImage.ScaleTo(1500, 1, Easing.Linear);
             if (IsFirstTime == "yes")
             {
-
                 Application.Current.MainPage = new NavigationPage(new LoginPage1()); ;
                 IsFirstTime = "no";
             }
             else
             {
-                Application.Current.MainPage = new NavigationPage(new MasterDetail());
+                if (bus.CheckIfExists() != string.Empty)
+                {
+                    Application.Current.MainPage = new NavigationPage(new MasterDetail());
+                }
+                else
+                {
+                    Application.Current.MainPage = new NavigationPage(new LoginPage1()); ;
+                    IsFirstTime = "no";
+                }
             }
         }
     }

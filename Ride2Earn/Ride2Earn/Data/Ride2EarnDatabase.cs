@@ -28,45 +28,19 @@ namespace Ride2Earn.Data
             this.Ritten = new ObservableCollection<Rit>(database.Table<Rit>());
         }
 
-        /*public int SaveStartAdres(StartAdres a)
-        {
-            lock (collisionLock)
-            {
-                if (a.ID != 0)
-                {
-                    database.Update(a);
-                    return a.ID;
-                }
-                else
-                {
-                    database.Insert(a);
-                    return a.ID;
-                }
-            }
-        }
-
-        public int SaveEindAdres(EindAdres a)
-        {
-            lock (collisionLock)
-            {
-                if (a.ID != 0)
-                {
-                    database.Update(a);
-                    return a.ID;
-                }
-                else
-                {
-                    database.Insert(a);
-                    return a.ID;
-                }
-            }
-        }*/
-
         public IEnumerable<Gebruiker> GetWW()
         {
             lock(collisionLock)
             {
                 return database.Query<Gebruiker>("SELECT Wachtwoord FROM Gebruikers where ID = 1").AsEnumerable();
+            }
+        }
+
+        public IEnumerable<Gebruiker> Checken()
+        {
+            lock (collisionLock)
+            {
+                return database.Query<Gebruiker>("SELECT Voornaam FROM Gebruikers where ID= 1").AsEnumerable();
             }
         }
 

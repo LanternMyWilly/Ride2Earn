@@ -10,6 +10,7 @@ namespace Ride2Earn.Klassen
     class Business
     {
         private Ride2EarnDatabase _db;
+        private IEnumerable<Gebruiker> _checken;
         private IEnumerable<Rit> _GetStartAdressen;
         private IEnumerable<Rit> _GetEindeAdressen;
         private IEnumerable<Gebruiker> _Wachtwoord;
@@ -35,6 +36,12 @@ namespace Ride2Earn.Klassen
         {
             get { return _Wachtwoord; }
             set { _Wachtwoord = value; }
+        }
+
+        public IEnumerable<Gebruiker> Checken
+        {
+            get { return _checken; }
+            set { _checken = value; }
         }
 
         public IEnumerable<Rit> Start
@@ -74,6 +81,7 @@ namespace Ride2Earn.Klassen
             _Km = _db.GetAantalKM();
             _GetStartAdressen = _db.GetStartAdressen();
             _GetEindeAdressen = _db.GetEindAdressen();
+            _checken = _db.Checken();
         }
 
         public Business(int id)
@@ -111,6 +119,16 @@ namespace Ride2Earn.Klassen
             foreach (Rit b in _Start)
             {
                 a = b.StartRit();
+            }
+            return a;
+        }
+
+        public string CheckIfExists()
+        {
+            string a = string.Empty;
+            foreach (Gebruiker b in _checken)
+            {
+                a = b.ToCheck();
             }
             return a;
         }

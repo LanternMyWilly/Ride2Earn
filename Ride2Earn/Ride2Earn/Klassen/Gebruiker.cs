@@ -78,5 +78,10 @@ namespace Ride2Earn.Klassen
         {
             return string.Format("{0}", Wachtwoord);
         }
+
+        public string ToCheck()
+        {
+            return string.Format("{0}", Voornaam);
+        }
     }
 }
