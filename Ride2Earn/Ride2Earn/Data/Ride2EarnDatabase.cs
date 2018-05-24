@@ -199,7 +199,7 @@ namespace Ride2Earn.Data
 
         public int SaveRit(Rit a)
         {
-            lock(collisionLock)
+            lock (collisionLock)
             {
                 if (a.ID != 0)
                 {
@@ -213,55 +213,5 @@ namespace Ride2Earn.Data
                 }
             }
         }
-
-       
-
-        /*readonly SQLiteAsyncConnection database;
-
-        public Ride2EarnDatabase(string dbPath)
-        {
-            database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<Rit>();
-            database.CreateTableAsync<Gebruiker>();
-        }
-
-        public Task<List<Rit>> GetRitAsync()
-        {
-            return database.Table<Rit>().ToListAsync();
-        }
-
-        public Task<int> SaveRitAsync(Rit a)
-        {
-            if (a.ID != 0)
-            {
-                return database.UpdateAsync(a);
-            }
-            else { return database.InsertAsync(a); }
-        }
-
-        public Task<int> SaveGebruikerAsync(Gebruiker a)
-        {
-            if (a.ID != 0)
-            {
-                return database.UpdateAsync(a);
-            }
-            else { return database.InsertAsync(a); }
-        }
-        
-        public Task<List<Gebruiker>> GetGebruikerAsync()
-        {
-            return database.Table<Gebruiker>().ToListAsync();
-        }
-
-        public Task<int> EditGebruiker(Gebruiker a)
-        {
-            return database.UpdateAsync(a);
-        }
-
-        public IEnumerable<Gebruiker> test()
-        {
-            var query = from t in database.Table<Gebruiker>() where t.ID == 0 select t;
-            return query.AsEnumerable();
-        }*/
     }
 }

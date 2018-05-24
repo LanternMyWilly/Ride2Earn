@@ -117,17 +117,12 @@ namespace Ride2Earn.Views.Pages
 
         void NieuwEind1(object sender, EventArgs e)
         {
-            /*EindePicker.IsVisible = false;
-            btnEindNieuw1.IsVisible = false;
-            EntryEinde.IsVisible = true;*/
             Situatie5.IsVisible = false;
             Situatie6.IsVisible = true;
         }
 
         void NieuwBestaand1(object sender, EventArgs e)
         {
-            /*EntryStart.IsVisible = false;
-            btnStartBestaand1.IsVisible = false;*/
             Situatie3.IsVisible = false;
             Situatie2.IsVisible = true;
 
@@ -135,33 +130,18 @@ namespace Ride2Earn.Views.Pages
 
         void NieuwBestaand(object sender, EventArgs e)
         {
-            /*startlabel.IsVisible = false;
-            btnStartBestaand.IsVisible = false;
-            btnStartNieuw.IsVisible = false;
-            StartPicker.IsVisible = true;
-            btnStartNieuw1.IsVisible = true;*/
             Situatie1.IsVisible = false;
-            Situatie3.IsVisible = true;
+            Situatie2.IsVisible = true;
         }
 
         void EindBestaand(object sender, EventArgs e)
         {
-            /*EindLabel.IsVisible = false;
-            btnEindBestaand.IsVisible = false;
-            btnEindNieuw.IsVisible = false;
-            EindePicker.IsVisible = true;
-            btnEindNieuw1.IsVisible = true;*/
             Situatie4.IsVisible = false;
             Situatie5.IsVisible = true;
         }
 
         void EindBestaand1(object sender, EventArgs e)
         {
-            /*EindLabel.IsVisible = false;
-            btnEindBestaand.IsVisible = false;
-            btnEindNieuw.IsVisible = false;
-            EindePicker.IsVisible = true;
-            btnEindNieuw1.IsVisible = true;*/
             Situatie6.IsVisible = false;
             Situatie5.IsVisible = true;
         }
@@ -173,7 +153,7 @@ namespace Ride2Earn.Views.Pages
                 EntryStart.Text = Convert.ToString(StartPicker.SelectedItem);
                 StartPicker.IsVisible = false;
                 btnStartNieuw1.IsVisible = false;
-                EntryStart.IsVisible = true;
+                Situatie3.IsVisible = true;
             }
         }
 
@@ -182,7 +162,7 @@ namespace Ride2Earn.Views.Pages
             EntryEinde.Text = Convert.ToString(EindePicker.SelectedItem);
             EindePicker.IsVisible = false;
             btnEindNieuw1.IsVisible = false;
-            EntryEinde.IsVisible = true;
+            Situatie6.IsVisible = true;
         }
     }
 }
