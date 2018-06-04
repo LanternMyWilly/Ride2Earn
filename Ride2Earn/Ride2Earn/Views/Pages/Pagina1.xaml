@@ -6,7 +6,7 @@
              x:Class="Ride2Earn.Views.Pages.Pagina1">
     <ContentPage.Content>
         <StackLayout x:Name="MasterLayout">
-            <Image x:Name="LoginIcon" Source="PersonPagina.png" WidthRequest="120" VerticalOptions="Center"/>
+            <Image x:Name="LoginIcon" Source="PersonPagina.png" WidthRequest="100" VerticalOptions="Center"/>
             <StackLayout Orientation="Vertical" Padding="10,0,10,15">
             <ListView x:Name="lstGebruiker" VerticalOptions="FillAndExpand" RowHeight="250" SeparatorVisibility="None">
                 <ListView.ItemTemplate>

@@ -8,13 +8,6 @@ using Xamarin.Forms;
 
 namespace Ride2Earn.Models
 {
-    /// <summary>
-    /// The awesome Transparent Popup Page
-    /// sub-classed from Rg.Plugins.Popup
-    /// Customized for our usecase with
-    /// Generic data type support for the result
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
     public class InputAlertDialogBase<T> : PopupPage
     {
         // the awaitable task

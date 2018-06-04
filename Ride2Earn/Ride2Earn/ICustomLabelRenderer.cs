@@ -16,7 +16,6 @@ namespace Ride2Earn
             typeof(ICustomLabelRenderer),
             Color.Gray);
 
-        // Gets or sets BorderColor value
         public Color BorderColor
         {
             get { return (Color)GetValue(BorderColorProperty); }
@@ -30,7 +29,6 @@ namespace Ride2Earn
             typeof(ICustomLabelRenderer),
             Device.OnPlatform<int>(1, 2, 2));
 
-        // Gets or sets BorderWidth value
         public int BorderWidth
         {
             get { return (int)GetValue(BorderWidthProperty); }
@@ -44,7 +42,6 @@ namespace Ride2Earn
             typeof(ICustomLabelRenderer),
             Device.OnPlatform<double>(6, 7, 7));
 
-        // Gets or sets CornerRadius value
         public double CornerRadius
         {
             get { return (double)GetValue(CornerRadiusProperty); }
@@ -58,7 +55,6 @@ namespace Ride2Earn
             typeof(ICustomLabelRenderer),
             true);
 
-        // Gets or sets IsCurvedCornersEnabled value
         public bool IsCurvedCornersEnabled
         {
             get { return (bool)GetValue(IsCurvedCornersEnabledProperty); }

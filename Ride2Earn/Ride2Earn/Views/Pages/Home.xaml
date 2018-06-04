@@ -44,7 +44,7 @@
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" x:Name="Situatie2" IsVisible="False">
-                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="Fill">
                             <Picker x:Name="StartPicker" Title="Selecteer vertrek adres" SelectedIndexChanged="SelectStart"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
@@ -105,7 +105,7 @@
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" x:Name="Situatie5" IsVisible="False">
-                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="Fill">
                             <Picker x:Name="EindePicker" Title="Selecteer aankomst adres" SelectedIndexChanged="SelectEinde"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">

@@ -25,7 +25,6 @@ namespace Ride2Earn.Views.Dialogs
 
         private void CloseButton_Clicked(object sender, EventArgs e)
         {
-            // invoke the event handler if its being subscribed
             CloseButtonEventHandler?.Invoke(this, e);
         }
     }

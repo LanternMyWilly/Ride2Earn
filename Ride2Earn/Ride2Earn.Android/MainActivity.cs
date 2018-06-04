@@ -25,7 +25,7 @@ namespace Ride2Earn.Droid
             
             LoadApplication(new App());
 
-            var mainPage = new MainPage();//this could be content page
+            var mainPage = new MainPage();
             var rootPage = new NavigationPage(mainPage);
         }
     }

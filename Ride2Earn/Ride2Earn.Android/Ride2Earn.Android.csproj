@@ -222,7 +222,6 @@
     <Compile Include="CustomRenderer\FirstButtonRenderer.cs" />
     <Compile Include="CustomRenderer\FirstLabelRenderer.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
