@@ -56,15 +56,13 @@ namespace Ride2Earn.Views.Pages
         {
             DateTime date;
             double value = 0;
-            var rit = (Rit)BindingContext;
-
+            var rit = (Rit)BindingContext;        
             
-            
-
             if (EntryDatum.Text != string.Empty && EntryEinde.Text != string.Empty && EntryStart.Text != string.Empty && EntryGereden.Text != string.Empty)
             {
                 if ((DateTime.TryParse(EntryDatum.Text, out date)) && (double.TryParse(EntryGereden.Text, out value)))
                 {
+
                     dataAccess.SaveRit(rit);
                     DisplayAlert("Succesvol", "Rit succesvol opgeslagen.", "OK");
                     Navigation.InsertPageBefore(new Home(), this);
@@ -87,29 +85,18 @@ namespace Ride2Earn.Views.Pages
 
         void NieuwStart(object sender, EventArgs e)
         {
-            /*startlabel.IsVisible = false;
-            btnStartBestaand.IsVisible = false;
-            btnStartNieuw.IsVisible = false;
-            EntryStart.IsVisible = true;*/
             Situatie3.IsVisible = true;
             Situatie1.IsVisible = false;
         }
 
         void NieuwStart1(object sender, EventArgs e)
         {
-            /*StartPicker.IsVisible = false;
-            btnStartNieuw1.IsVisible = false;
-            EntryStart.IsVisible = true;*/
             Situatie2.IsVisible = false;
             Situatie3.IsVisible = true;
         }
 
         void NieuwEind(object sender, EventArgs e)
         {
-            /*EindLabel.IsVisible = false;
-            btnEindBestaand.IsVisible = false;
-            btnEindNieuw.IsVisible = false;
-            EntryEinde.IsVisible = true;*/
             Situatie4.IsVisible = false;
             Situatie6.IsVisible = true;
         }

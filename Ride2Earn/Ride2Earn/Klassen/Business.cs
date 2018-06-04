@@ -98,7 +98,11 @@ namespace Ride2Earn.Klassen
             List<string> a = new List<string>();
             foreach (Rit b in _GetStartAdressen)
             {
-                a.Add(b.StartAdressen());
+                bool containsItem = a.Contains(b.StartAdressen());
+                if (containsItem == false)
+                {
+                    a.Add(b.StartAdressen());
+                }
             }
             return a;
         }
@@ -108,7 +112,11 @@ namespace Ride2Earn.Klassen
             List<string> a = new List<string>();
             foreach (Rit b in _GetEindeAdressen)
             {
-                a.Add(b.EindAdressen());
+                bool containsItem = a.Contains(b.EindAdressen());
+                if (containsItem == false)
+                {
+                    a.Add(b.EindAdressen());
+                }               
             }
             return a;
         }

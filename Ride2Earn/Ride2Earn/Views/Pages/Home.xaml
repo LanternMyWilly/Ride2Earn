@@ -9,7 +9,7 @@
             
 
             <StackLayout x:Name="EntriesStack" Padding="10,0,10,0" VerticalOptions="CenterAndExpand">
-                <Image x:Name="LoginIcon" Source="KM.png" WidthRequest="120"/>
+                <Image x:Name="LoginIcon" Source="KM.png" WidthRequest="120" />
                 <local:ICustomEntryRenderer
                     Text="{Binding Datum}"
                     x:Name="EntryDatum"
@@ -64,7 +64,6 @@
                                 x:Name="EntryStart"
                                 Placeholder="Vertrek (adres)"
                                 CornerRadius="18"
-                                WidthRequest="240"
                                 IsCurvedCornersEnabled="True"
                                 BorderColor="#637775"
                                 HorizontalTextAlignment="Start"
